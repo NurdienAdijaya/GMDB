@@ -44,6 +44,7 @@ const Navbar = () => {
         </nav>
       </div>
       <h1>ini header</h1>
+      <a href ={"/detailmoive"}>cek detail movie</a>
     </div>
   );
 };
