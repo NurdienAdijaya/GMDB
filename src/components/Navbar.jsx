@@ -1,7 +1,9 @@
 import React from "react";
 import "../styles/Navbar.css";
+import Logo from "./Logo";
 
 const Navbar = () => {
+  const Login = true;
   return (
     <div className="header">
       <div>
