@@ -1,0 +1,9 @@
+.footer-item {
+  background-color: black;
+  color: white;
+  padding: 2rem;
+}
+
+.copyright {
+  border-top: white solid 3px;
+}

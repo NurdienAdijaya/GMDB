@@ -7,4 +7,12 @@ export const BASE_URL_USER = "http://localhost:4000/user";
 export const BASE_URL_MOVIE = "http://localhost:4000/movie";
 export const BASE_URL_REVIEW = "http://localhost:4000/review";
 
+export const PROJECT_TITLE = "GMDB";
+
 export const BASE_URL_MOVIE_IMG = "";
+
+export const REGISTER_SUCCESS = "REGISTER_SUCCESS";
+export const REGISTER_FAIL = "REGISTER_FAIL";
+export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
+export const LOGIN_FAIL = "LOGIN_FAIL";
+export const LOGOUT = "LOGOUT";
