@@ -3,8 +3,10 @@ import "react-responsive-modal/styles.css";
 import { Modal } from "react-responsive-modal";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
-import Login from "./Login";
 import LogoProjectTitle from "./assets/LogoProjectTitle";
+import SignIn from "./SignIn";
+import { Route, Switch } from "react-router-dom";
+import { SignUp } from "./SignUp";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
@@ -35,9 +37,27 @@ const Header = () => {
               </form>
             </Nav>
             <Nav>
-              <Nav.Link onClick={onOpenModal}>Sign In</Nav.Link>
+              <Switch>
+                <Route exact path="/signup">
+                  <Nav.Link style={{ fontWeight: "700" }} onClick={onOpenModal}>
+                    Sign Up
+                  </Nav.Link>
+                </Route>
+                <Route exact path="/">
+                  <Nav.Link style={{ fontWeight: "700" }} onClick={onOpenModal}>
+                    Log In
+                  </Nav.Link>
+                </Route>
+              </Switch>
               <Modal open={open} onClose={onCloseModal} center>
-                <Login />
+                <Switch>
+                  <Route exact path="/">
+                    <SignIn />
+                  </Route>
+                  <Route path="/signup">
+                    <SignUp />
+                  </Route>
+                </Switch>
               </Modal>
               <div className="text-center">
                 <img src="..." className="rounded" alt="..." />

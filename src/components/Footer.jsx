@@ -1,6 +1,6 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
-import "./Footer.css";
+import "./assets/Footer.css";
 import AppStoreBadges from "./assets/App_Store_Badge.svg";
 import LogoProjectTitle from "./assets/LogoProjectTitle";
 
@@ -9,14 +9,15 @@ const Footer = () => {
     <div className="main-footer footer-item">
       <div className="container">
         <Row>
-          <Col lg={6}>
-            <LogoProjectTitle />
+          <Col lg={7}>
+            <div className="logo">
+              <LogoProjectTitle />
+            </div>
             <p>
               GMDB is an online database of information related to films,
-              television programs, home videos, video games, and streaming
-              content online – including cast, production crew and personal
-              biographies, plot summaries, trivia, ratings, and fan and critical
-              reviews.
+              television programs, and streaming content online – including
+              cast, production crew and personal biographies, plot summaries,
+              trivia, ratings, and fan and critical reviews.
             </p>
           </Col>
           <Col>
@@ -39,8 +40,9 @@ const Footer = () => {
         </Row>
         {/* footer bottom */}
         <div className="container-fluid copyright">
-          <p className="text-xs-center ">
-            {new Date().getFullYear()} City Guide App - All Rights Reserved
+          <p className="text-center copyright-text">
+            {new Date().getFullYear()} Glints Movie Database App - All Rights
+            Reserved
           </p>
         </div>
       </div>

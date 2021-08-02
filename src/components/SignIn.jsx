@@ -1,10 +1,11 @@
-import { Fragment } from "react";
+import React, { Fragment } from "react";
 import { Button, Form } from "react-bootstrap";
-import { Link } from "react-router-dom";
 import { PROJECT_TITLE } from "../store/actions/types";
+import "react-responsive-modal/styles.css";
+import { Link } from "react-router-dom";
 import "./assets/Modal.css";
 
-export const SignUp = () => {
+const SignIn = () => {
   return (
     <Fragment className="body ">
       <Form className="modal-from">
@@ -23,27 +24,25 @@ export const SignUp = () => {
         </h2>
         <Form.Group className="mb-2 mt-4" controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
-          <Form.Control type="email" placeholder="" />
+          <Form.Control type="email" placeholder="Enter email" />
         </Form.Group>
 
-        <Form.Group className="mb-2" controlId="formBasicPassword">
-          <Form.Label>Password</Form.Label>
-          <Form.Control type="password" placeholder="" />
-        </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Label>Confirm Password</Form.Label>
-          <Form.Control type="password" placeholder="" />
+          <Form.Label>Password</Form.Label>
+          <Form.Control type="password" placeholder="Password" />
         </Form.Group>
         <Button variant="primary" type="submit">
           Login
         </Button>
         <p className="mt-5 text-muted text-center signFoot">
-          have an account?{" "}
-          <Link to="/" className="text-danger">
-            Sign In
+          don't have an account?{" "}
+          <Link to="/signup" className="text-danger">
+            Sign Up
           </Link>
         </p>
       </Form>
     </Fragment>
   );
 };
+
+export default SignIn;
