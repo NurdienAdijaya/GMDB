@@ -11,6 +11,11 @@ const Routers = () => {
         <Route exact path = "/detailmoive">
             <MovieDetailUpper/>
         </Route>
+        <Route path="*">
+            <div>
+                <h1>Not Found</h1>
+            </div>
+        </Route>
     </Switch>
 )
 
