@@ -2,7 +2,9 @@ import React from "react";
 
 const aku = () => {
     return ( 
-        <div></div>
+        <div>
+       
+        </div>
      );
 }
  
