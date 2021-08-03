@@ -1,6 +1,7 @@
 import React from "react";
+import { PROJECT_TITLE } from "../../store/actions/types";
 
-const Logo = () => {
+const LogoProjectTitle = () => {
   return (
     <div>
       <svg
@@ -13,8 +14,9 @@ const Logo = () => {
       >
         <rect width="137" height="99" rx="20" fill="#FE024E" />
       </svg>
+      {PROJECT_TITLE}
     </div>
   );
 };
 
-export default Logo;
+export default LogoProjectTitle;
