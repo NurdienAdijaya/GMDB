@@ -14,6 +14,8 @@ const Header = () => {
   const onOpenModal = () => setOpen(true);
   const onCloseModal = () => setOpen(false);
 
+  localStorage.setItem("Token", "This Is A Token");
+  const token = localStorage.getItem("");
   return (
     <Fragment>
       <Navbar collapseOnSelect expand="md" bg="light" variant="light">
@@ -36,40 +38,57 @@ const Header = () => {
                 </button> */}
               </form>
             </Nav>
-            <Nav>
-              <Switch>
-                <Route exact path="/signup">
-                  <Nav.Link style={{ fontWeight: "700" }} onClick={onOpenModal}>
-                    Sign Up
-                  </Nav.Link>
-                </Route>
-                <Route exact path="/">
-                  <Nav.Link style={{ fontWeight: "700" }} onClick={onOpenModal}>
-                    Log In
-                  </Nav.Link>
-                </Route>
-              </Switch>
-              <Modal open={open} onClose={onCloseModal} center>
+            {token ? (
+              <Nav>
+                <div className="text-center">
+                  <img src="..." className="rounded" alt="..." />
+                </div>
+                <NavDropdown title="Hi, User" id="collasible-nav-dropdown">
+                  <NavDropdown.Item href="#action/3.1">
+                    Profile
+                  </NavDropdown.Item>
+                  <NavDropdown.Item href="#action/3.2">
+                    Settings
+                  </NavDropdown.Item>
+                  <NavDropdown.Item href="#action/3.3">Help</NavDropdown.Item>
+                  <NavDropdown.Divider />
+                  <NavDropdown.Item href="#action/3.4">
+                    Sign Out
+                  </NavDropdown.Item>
+                </NavDropdown>
+              </Nav>
+            ) : (
+              <Nav>
                 <Switch>
-                  <Route exact path="/">
-                    <SignIn />
+                  <Route exact path="/signup">
+                    <Nav.Link
+                      style={{ fontWeight: "700" }}
+                      onClick={onOpenModal}
+                    >
+                      Sign Up
+                    </Nav.Link>
                   </Route>
-                  <Route path="/signup">
-                    <SignUp />
+                  <Route exact path="/">
+                    <Nav.Link
+                      style={{ fontWeight: "700" }}
+                      onClick={onOpenModal}
+                    >
+                      Log In
+                    </Nav.Link>
                   </Route>
                 </Switch>
-              </Modal>
-              <div className="text-center">
-                <img src="..." className="rounded" alt="..." />
-              </div>
-              <NavDropdown title="Hi, User" id="collasible-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">Profile</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">Settings</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">Help</NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="#action/3.4">Sign Out</NavDropdown.Item>
-              </NavDropdown>
-            </Nav>
+                <Modal open={open} onClose={onCloseModal} center>
+                  <Switch>
+                    <Route exact path="/">
+                      <SignIn />
+                    </Route>
+                    <Route path="/signup">
+                      <SignUp />
+                    </Route>
+                  </Switch>
+                </Modal>
+              </Nav>
+            )}
           </Navbar.Collapse>
         </Container>
       </Navbar>

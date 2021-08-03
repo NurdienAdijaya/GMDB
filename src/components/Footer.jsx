@@ -9,7 +9,7 @@ const Footer = () => {
     <div className="main-footer footer-item">
       <div className="container">
         <Row>
-          <Col lg={7}>
+          <Col lg={6}>
             <div className="logo">
               <LogoProjectTitle />
             </div>
