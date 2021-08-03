@@ -1,12 +1,21 @@
+
+import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Main from "./pages/Main";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 import { BrowserRouter } from "react-router-dom";
-import Router from "./Routes/router"
 
 function App() {
   return (
-    <BrowserRouter>
-    <Router/>
-    </BrowserRouter>
+    <div className="App">
+      
+      <BrowserRouter>
+        <Header />
+        <Main />
+        <Footer />
+      </BrowserRouter>
+    </div>
   );
 }
 

@@ -9,17 +9,26 @@
     "axios": "^0.21.1",
     "bootstrap": "^5.0.2",
     "react": "^17.0.2",
+<<<<<<< HEAD
     "react-bootstrap": "^1.6.1",
+=======
+    "react-bootstrap": "^2.0.0-beta.4",
+>>>>>>> dc178edaa8ef1220b3660b7f96f80f1b8c900e74
     "react-dom": "^17.0.2",
     "react-iframe": "^1.8.0",
     "react-rating-stars-component": "^2.2.0",
     "react-redux": "^7.2.4",
+<<<<<<< HEAD
+=======
+    "react-responsive-modal": "^6.1.0",
+>>>>>>> dc178edaa8ef1220b3660b7f96f80f1b8c900e74
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "react-star-rating": "^1.4.2",
     "redux": "^4.1.0",
     "redux-devtools-extension": "^2.13.9",
     "redux-thunk": "^2.3.0",
+    "server": "^1.0.34",
     "web-vitals": "^1.0.1"
   },
   "scripts": {

@@ -1,0 +1,12 @@
+.card{
+    width: 250px;
+}
+
+.card-img-top{
+    width:100%;
+}
+
+.card-title{
+    color: black;
+    font-size: small;
+}
