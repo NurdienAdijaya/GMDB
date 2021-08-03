@@ -15,7 +15,7 @@ const Routers = () => {
         <Route exact path="/signup">
           <Main />
         </Route>
-        <Route exact path="/detailmovie">
+        <Route exact path="/moviedetail">
           <MovieDetailUpper />
         </Route>
         <Route exact path="/">

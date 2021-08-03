@@ -20,7 +20,7 @@ const Header = () => {
     <Fragment>
       <Navbar collapseOnSelect expand="md" bg="light" variant="light">
         <Container>
-          <Navbar.Brand href="#home">
+          <Navbar.Brand href="/">
             <LogoProjectTitle />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
