@@ -2,12 +2,13 @@ import React from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { BASE_YOUTUBE_EMBED } from "../store/actions/types";
+import { API_KEY, BASE_YOUTUBE_EMBED } from "../store/actions/types";
 import { Modal } from "react-bootstrap";
 import Iframe from "react-iframe";
 import { Tabs, Tab } from "react-bootstrap";
 import StarRatings from "react-star-ratings";
-import "./moviedetailuper.css"
+import "./moviedetailuper.css";
+import AllReview from "../components/AllReview";
 
 const MovieDetailUpper = () => {
   const MovieImages = "https://image.tmdb.org/t/p/w500";
@@ -16,7 +17,7 @@ const MovieDetailUpper = () => {
   const getMovieDetail = async () => {
     await axios
       .get(
-        `https://api.themoviedb.org/3/movie/${id}?api_key=a6117a0d2c9b9f97d1b34b57e1f580eb&language=en-US&page=1`
+        `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&language=en-US&page=1`
       )
       .then((result) => setMovies(result.data))
       .catch((err) => console.log(err));
@@ -104,6 +105,7 @@ const MovieDetailUpper = () => {
             </Tab>
             <Tab eventKey="Review" title="Review">
               <p>Review</p>
+              <AllReview />
             </Tab>
           </Tabs>
         </div>
