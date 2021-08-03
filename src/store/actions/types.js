@@ -8,3 +8,6 @@ export const BASE_URL_MOVIE = "http://localhost:4000/movie";
 export const BASE_URL_REVIEW = "http://localhost:4000/review";
 
 export const BASE_URL_MOVIE_IMG = "";
+export const GET_REVIEW_BEGIN = "GET_REVIEW_BEGIN";
+export const GET_REVIEW_SUCCESS = "GET_REVIEW_SUCCESS";
+export const GET_REVIEW_FAIL = "GET_REVIEW_FAIL";
