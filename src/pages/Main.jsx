@@ -1,6 +1,6 @@
 import React from 'react'
 import Nextbutton from './Main/Nextbutton'
-import Card from './Main/Card'
+// import Card from './Main/Card'
 import Imageslide from './Main/Imageslide'
 import ButtonCategory from './Main/ButtonCategory'
 import Movie from './Main/Movie'
