@@ -24,7 +24,7 @@ const MovieDetailUpper = () => {
   };
   useEffect(() => {
     getMovieDetail();
-  });
+  }, []);
   console.log(movies);
 
   const [show, setShow] = useState(false);
