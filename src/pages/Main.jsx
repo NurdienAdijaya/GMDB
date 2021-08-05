@@ -7,14 +7,14 @@ import ButtonCategory from './Main/ButtonCategory'
 
 
 const Main = () => {
-    // const [ button, setButton] = useState([]);
+  // const [ button, setButton] = useState([]);
 
-    // const filter = (button) => {
-    //     const filteredData= Movie.filter(item => item.category === button);
-    //     Movie(filteredData)
-    // }
+  // const filter = (button) => {
+  //     const filteredData= Movie.filter(item => item.category === button);
+  //     Movie(filteredData)
+  // }
 
-    // button={button} filter={filter}
+  // button={button} filter={filter}
 
     return (
         <div>
@@ -26,4 +26,4 @@ const Main = () => {
     )
 }
 
-export default Main
+export default Main;
