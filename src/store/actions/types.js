@@ -8,6 +8,7 @@ export const BASE_URL = "http://localhost:4000";
 export const BASE_URL_USER = "http://localhost:4000/user";
 export const BASE_URL_MOVIE = "http://localhost:4000/movie";
 export const BASE_URL_REVIEW = "http://localhost:4000/review";
+export const BASE_URL_SEARCH = "";
 export const BASE_YOUTUBE_EMBED = "https://www.youtube.com/embed";
 
 export const API_KEY = process.env.REACT_APP_API_KEY;
@@ -32,3 +33,8 @@ export const LOGIN_FAIL = "LOGIN_FAIL";
 export const LOGOUT_BEGIN = "LOGOUT_BEGIN";
 export const LOGOUT_SUCCESS = "LOGOUT_SUCCESS";
 export const LOGOUT_FAIL = "LOGOUT_FAIL";
+
+export const SEARCH_BEGIN = "SEARCH_BEGIN";
+export const SEARCH_SUCCESS = "SEARCH_SUCCESS";
+export const SEARCH_FAIL = "SEARCH_FAIL";
+export const CLEAR = "CLEAR";

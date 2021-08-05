@@ -3,7 +3,7 @@ import { Button, Form } from "react-bootstrap";
 import { PROJECT_TITLE } from "../store/actions/types";
 import "react-responsive-modal/styles.css";
 import { Link } from "react-router-dom";
-import "./assets/Modal.css";
+import "../styles/Modal.css";
 
 const SignIn = () => {
   return (

@@ -2,7 +2,6 @@ import {
   GET_REVIEW_BEGIN,
   GET_REVIEW_SUCCESS,
   GET_REVIEW_FAIL,
-  GET_MOVIES_BEGIN,
 } from "../actions/types";
 
 const initialState = {
