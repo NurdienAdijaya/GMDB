@@ -104,7 +104,7 @@ const MovieDetailUpper = () => {
               <p>Characters</p>
             </Tab>
             <Tab eventKey="Review" title="Review">
-              <p>Review</p>
+              {/* BAGIAN REVIEW */}
               <AllReview />
             </Tab>
           </Tabs>
