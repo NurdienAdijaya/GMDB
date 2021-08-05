@@ -1,9 +1,9 @@
 import React from 'react'
 import Nextbutton from './Main/Nextbutton'
-import Card from './Main/Card'
+import Cardm from './Main/Cardm'
 import Imageslide from './Main/Imageslide'
 import ButtonCategory from './Main/ButtonCategory'
-import Movie from './Main/Movie'
+
 
 
 const Main = () => {
@@ -20,7 +20,7 @@ const Main = () => {
         <div>
             <Imageslide/>
             <ButtonCategory /> 
-            <Movie/>
+            <Cardm/>
             <Nextbutton/>
         </div>
     )

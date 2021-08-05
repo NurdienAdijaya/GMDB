@@ -1,9 +1,8 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Navbar from "./components/Navbar";
 import Main from "./pages/Main";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+// import Header from "./components/Header";
+// import Footer from "./components/Footer";
 import { BrowserRouter } from "react-router-dom";
 
 function App() {
@@ -11,9 +10,9 @@ function App() {
     <div className="App">
       
       <BrowserRouter>
-        <Header />
+        {/* <Header /> */}
         <Main />
-        <Footer />
+        {/* <Footer /> */}
       </BrowserRouter>
     </div>
   );
