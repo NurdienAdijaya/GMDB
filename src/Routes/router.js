@@ -1,8 +1,8 @@
 import { Switch, Route } from "react-router-dom";
-import MovieDetailUpper from "../pages/moviedetailupper";
 import Main from "../pages/Main";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import MovieDetailUpper from "../pages/moviedetailupper";
 
 const Routers = () => {
   return (
@@ -15,7 +15,7 @@ const Routers = () => {
         <Route exact path="/signup">
           <Main />
         </Route>
-        <Route exact path="/moviedetail">
+        <Route exact path="/moviedetail/:id">
           <MovieDetailUpper />
         </Route>
         <Route exact path="/">
