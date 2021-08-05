@@ -1,9 +1,10 @@
-import React from "react";
-import Nextbutton from "./Main/Nextbutton";
-// import Card from './Main/Card'
-import Imageslide from "./Main/Imageslide";
-import ButtonCategory from "./Main/ButtonCategory";
-import Movie from "./Main/Movie";
+import React from 'react'
+import Nextbutton from './Main/Nextbutton'
+import Cardm from './Main/Cardm'
+import Imageslide from './Main/Imageslide'
+import ButtonCategory from './Main/ButtonCategory'
+
+
 
 const Main = () => {
   // const [ button, setButton] = useState([]);
@@ -15,15 +16,14 @@ const Main = () => {
 
   // button={button} filter={filter}
 
-  return (
-    <div>
-      <a href="/moviedetail">to movie detail</a>
-      <Imageslide />
-      <ButtonCategory />
-      <Movie />
-      <Nextbutton />
-    </div>
-  );
-};
+    return (
+        <div>
+            <Imageslide/>
+            <ButtonCategory /> 
+            <Cardm/>
+            <Nextbutton/>
+        </div>
+    )
+}
 
 export default Main;

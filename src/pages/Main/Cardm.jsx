@@ -1,6 +1,8 @@
 import React, { useState, useEffect} from 'react'
+import { Card, Row, Container } from 'react-bootstrap'
+import '../../styles/Card1.css'
 
-export default function Card() {
+export default function Cardm() {
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
     const [items, setItems] = useState([]);
@@ -29,20 +31,20 @@ export default function Card() {
     } else {
         return (
         <>
-            {items.map(item => (
-            <div className="container-fluid">
-                <div className="container">
-                    <div class="row row-cols-1 row-cols-md-4 g-4 text-center mt-3">
-                        <div class="card">
-                            <img src={item.poster_path} class="card-img-top" alt="..."></img>
-                            <div class="card-body">
-                                <h1 class="card-title fw-bolder">{item.title}</h1>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            ))}
+         <Container fluid className="py-4">
+                <Container>
+                    <Row>
+                     {items.map(item => (
+                        <Card style={{ width: '13rem' }}>
+                            <Card.Img variant="top" src={`https://image.tmdb.org/t/p/w500${item.poster_path}`} />
+                            <Card.Body>
+                                <Card.Title>{item.title}</Card.Title>
+                            </Card.Body>
+                        </Card>
+                    ))}
+                   </Row>
+                </Container>  
+            </Container>
         </>
         );
     }
