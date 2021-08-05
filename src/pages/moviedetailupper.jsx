@@ -61,7 +61,7 @@ const MovieDetailUpper = () => {
               />
               <h5>Review {movies.vote_count}</h5>
               <p>{movies.overview}</p>
-              <button type="button" onClick={handleShow}>
+              <button calasName="trailer" type="button" onClick={handleShow}>
                 Watch Trailer
               </button>
               <Modal show={show} onHide={handleClose}>
