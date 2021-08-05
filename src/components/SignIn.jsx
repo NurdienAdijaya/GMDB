@@ -4,8 +4,26 @@ import { PROJECT_TITLE } from "../store/actions/types";
 import "react-responsive-modal/styles.css";
 import { Link } from "react-router-dom";
 import "../styles/Modal.css";
+import { useState } from "react";
 
-const SignIn = () => {
+const SignIn = (props) => {
+  const { onclick, setShow } = props;
+  const { state, setState } = useState({
+    email: "",
+    password: "",
+  });
+
+  const login = (e) => {
+    e.preventDefault();
+    if (state.email === "" || state.password === "") {
+      alert("please fill all form");
+    } else {
+      axios.post(urlpostlogin, state).then((res) => {
+        setShow(false);
+        localStorage.setItem("Token", res.data.token);
+      });
+    }
+  };
   return (
     <Fragment className="body ">
       <Form className="modal-from">
@@ -22,14 +40,26 @@ const SignIn = () => {
           </svg>
           {PROJECT_TITLE}
         </h2>
-        <Form.Group className="mb-2 mt-4" controlId="formBasicEmail">
+        <Form.Group
+          noSubmit={login}
+          className="mb-2 mt-4"
+          controlId="formBasicEmail"
+        >
           <Form.Label>Email address</Form.Label>
-          <Form.Control type="email" placeholder="Enter email" />
+          <Form.Control
+            onChange={(e) => setState({ ...state, email: e.target.value })}
+            type="email"
+            placeholder="Enter email"
+          />
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicPassword">
           <Form.Label>Password</Form.Label>
-          <Form.Control type="password" placeholder="Password" />
+          <Form.Control
+            onChange={(e) => setState({ ...state, password: e.target.value })}
+            type="password"
+            placeholder="Password"
+          />
         </Form.Group>
         <Button variant="primary" type="submit">
           Login

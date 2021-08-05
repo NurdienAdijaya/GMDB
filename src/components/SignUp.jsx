@@ -1,3 +1,5 @@
+import axios from "axios";
+import { useState } from "react";
 import { Fragment } from "react";
 import { Button, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
@@ -5,6 +7,21 @@ import { PROJECT_TITLE } from "../store/actions/types";
 import "../styles/Modal.css";
 
 export const SignUp = () => {
+  const { onClick, setShow } = props;
+  const [state, setState] = useState({
+    name: "",
+    email: "",
+    password: "",
+  });
+
+  const add = (e) => {
+    e.preventDefault{}
+    if(state.name === "" || state.email === "" || state.password === "" ){
+    alert ("please fill all form")
+  }else{
+    axios.post(urlpost,state).then(res=>{setShow(false);alert("register successfully")})
+  }
+  }
   return (
     <Fragment className="body ">
       <Form className="modal-from">
