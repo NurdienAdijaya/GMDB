@@ -2,7 +2,7 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useState, useEffect } from "react";
 import { getReview } from "../store/actions/review";
-import { changeReview } from "../store/actions/changeReview";
+import { addReview } from "../store/actions/submitReview";
 import "../styles/PostReview.css";
 import { Button, Form, Card, CardImg } from "react-bootstrap";
 import StarRating from "./StarRating";
@@ -11,28 +11,35 @@ function AllReview() {
   const dispatch = useDispatch();
   const { review, loading } = useSelector((state) => state.reducerReview);
   const [reviews, setReviews] = useState("");
-  console.log("reviews", reviews);
+  const [rating, setRating] = useState(0);
+  // console.log("reviews", reviews);
 
   useEffect(() => {
     dispatch(getReview());
   }, []);
-  const changeReviewItem = (item) => {
-    dispatch(
-      changeReview(item.id, {
-        id: item.id,
-        reviews: item.reviews,
-        isDone: !item.isDone,
-      })
-    );
-  };
+  // const changeReviewItem = (item) => {
+  //   dispatch(
+  //     changeReview(item.id, {
+  //       id: item.id,
+  //       reviews: item.reviews,
+  //       isDone: !item.isDone,
+  //     })
+  //   );
+  // };
   const changeInput = (e) => {
     setReviews(e.target.value);
   };
-  const submitReview = () => {
+  const onSubmitReview = (e) => {
+    e.preventDefault();
+    // console.log("submit");
     if (reviews) {
-      dispatch(submitReview({ reviews: reviews, isDone: false }));
+      dispatch(addReview({ reviews: reviews, isDone: false, rating }));
       dispatch(getReview());
     }
+  };
+  const ratingInput = (rate) => {
+    setRating(rate);
+    console.log("udah bisa");
   };
   return (
     <div>
@@ -41,22 +48,24 @@ function AllReview() {
           <Card.Body>
             <CardImg />
             <Card.Title>User Name</Card.Title>
-            <StarRating />
-            <Form>
+            <StarRating value={rating} setValue={ratingInput} />
+            <Form onSubmit={onSubmitReview}>
               <Form.Group
                 className="mb-3"
                 controlId="exampleForm.ControlTextarea1"
               >
                 <Form.Control
+                  onChange={changeInput}
+                  value={reviews}
                   as="textarea"
                   rows={5}
                   placeholder="Leave A Review"
                 />
               </Form.Group>
+              <Button type="submit" className="post-button" variant="success">
+                Submit Review
+              </Button>
             </Form>
-            <Button className="post-button" variant="success">
-              Submit Review
-            </Button>
           </Card.Body>
         </Card>
       </div>
