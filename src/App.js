@@ -1,9 +1,9 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Provider } from "react-redux";
-import store from "./store";
 import { BrowserRouter } from "react-router-dom";
 import Routers from "./Routes/router";
+import { Provider } from "react-redux";
+import store from "./store";
 
 function App() {
   return (
