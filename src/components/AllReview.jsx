@@ -16,7 +16,7 @@ function AllReview() {
 
   useEffect(() => {
     dispatch(getReview());
-  }, []);
+  }, [dispatch]);
   // const changeReviewItem = (item) => {
   //   dispatch(
   //     changeReview(item.id, {
