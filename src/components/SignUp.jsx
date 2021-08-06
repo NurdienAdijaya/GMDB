@@ -7,7 +7,7 @@ import { BASE_URL_SIGNUP_GMDB } from "../store/actions/types";
 import LogoProjectTitle from "./assets/LogoProjectTitle";
 
 export const SignUp = (props) => {
-  const { onClick, setShow } = props;
+  const { setShow } = props;
   const [state, setState] = useState({
     fullname: "",
     username: "",

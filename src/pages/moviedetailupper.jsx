@@ -24,6 +24,7 @@ const MovieDetailUpper = () => {
   };
   useEffect(() => {
     getMovieDetail();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   console.log(movies);
 
