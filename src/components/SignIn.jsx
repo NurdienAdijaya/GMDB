@@ -1,10 +1,12 @@
 import React, { Fragment } from "react";
 import { Button, Form } from "react-bootstrap";
-import { PROJECT_TITLE } from "../store/actions/types";
 import "react-responsive-modal/styles.css";
 import { Link } from "react-router-dom";
-import "../styles/Modal.css";
 import { useState } from "react";
+
+import LogoProjectTitle from "./assets/LogoProjectTitle";
+import axios from "axios";
+import { BASE_URL_SIGNIN_GMDB } from "../store/actions/types";
 
 const SignIn = (props) => {
   const { onclick, setShow } = props;
@@ -18,33 +20,28 @@ const SignIn = (props) => {
     if (state.email === "" || state.password === "") {
       alert("please fill all form");
     } else {
-      axios.post(urlpostlogin, state).then((res) => {
+      axios.post(BASE_URL_SIGNIN_GMDB, state).then((res) => {
         setShow(false);
         localStorage.setItem("Token", res.data.token);
+        localStorage.setItem("USERID", res.data._id);
       });
     }
   };
   return (
     <Fragment className="body ">
-      <Form className="modal-from">
-        <h2 className="bd-placeholder-img text-center" href="#">
-          <svg
-            className="mb-1"
-            width="50"
-            height="30"
-            viewBox="0 0 137 99"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <rect width="137" height="99" rx="20" fill="#FE024E" />
-          </svg>
-          {PROJECT_TITLE}
-        </h2>
-        <Form.Group
-          noSubmit={login}
-          className="mb-2 mt-4"
-          controlId="formBasicEmail"
+      <Form
+        onSubmit={login}
+        className="modal-from m-1 p-1"
+        style={{ width: "20rem" }}
+      >
+        <div
+          className="bd-placeholder-img text-center"
+          href="/"
+          style={{ margin: "0.5rem" }}
         >
+          <LogoProjectTitle />
+        </div>
+        <Form.Group className="mb-2 mt-4" controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
           <Form.Control
             onChange={(e) => setState({ ...state, email: e.target.value })}
