@@ -10,8 +10,9 @@ export const BASE_URL_MOVIE = "http://localhost:4000/movie";
 export const BASE_URL_REVIEW = "http://localhost:4000/review";
 export const BASE_URL_SEARCH = "";
 export const BASE_YOUTUBE_EMBED = "https://www.youtube.com/embed";
+export const BASE_URL_TMDB_MOVIE ="https://api.themoviedb.org/3/movie/"
 
-export const API_KEY = process.env.REACT_APP_API_KEY;
+export const API_KEY =`?api_key=${process.env.REACT_APP_API_KEY}`;;
 
 export const BASE_URL_MOVIE_IMG = "";
 export const GET_REVIEW_BEGIN = "GET_REVIEW_BEGIN";
