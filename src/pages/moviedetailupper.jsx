@@ -17,7 +17,7 @@ const MovieDetailUpper = () => {
   const getMovieDetail = async () => {
     await axios
       .get(
-        `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&language=en-US&page=1`
+        `https://api.themoviedb.org/3/movie/${id}${API_KEY}&language=en-US&page=1`
       )
       .then((result) => setMovies(result.data))
       .catch((err) => console.log(err));
@@ -61,7 +61,7 @@ const MovieDetailUpper = () => {
               />
               <h5>Review {movies.vote_count}</h5>
               <p>{movies.overview}</p>
-              <button calasName="trailer" type="button" onClick={handleShow}>
+              <button className="trailer" type="button" onClick={handleShow}>
                 Watch Trailer
               </button>
               <Modal show={show} onHide={handleClose}>
