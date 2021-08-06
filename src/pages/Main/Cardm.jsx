@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Card, Row, Container } from "react-bootstrap";
+import { Card, Container } from "react-bootstrap";
 import "../../styles/Card1.css";
 
 export default function Cardm() {
@@ -33,24 +33,20 @@ export default function Cardm() {
   } else {
     return (
       <>
-        <Container fluid className="py-4">
-          <Container>
-            <Row>
-              {items.map((item) => (
-                <Card style={{ width: "13rem" }}>
-                  <a href={`/moviedetail/${item.id}`}>
-                    <Card.Img
-                      variant="top"
-                      src={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
-                    />
-                    <Card.Body>
-                      <Card.Title>{item.title}</Card.Title>
-                    </Card.Body>
-                  </a>
-                </Card>
-              ))}
-            </Row>
-          </Container>
+        <Container className=" d-flex flex-wrap justify-content-evenly">
+          {items.map((item) => (
+            <Card className="m-2" style={{ width: "13rem" }}>
+              <a href={`/moviedetail/${item.id}`}>
+                <Card.Img
+                  variant="top"
+                  src={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
+                />
+                <Card.Body>
+                  <Card.Title>{item.title}</Card.Title>
+                </Card.Body>
+              </a>
+            </Card>
+          ))}
         </Container>
       </>
     );
