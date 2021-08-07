@@ -14,25 +14,31 @@ const MovieCarousel = () => {
   return (
     <>
       <Carousel fade>
-        {loading
-          ? "loading..."
-          : playing.data &&
-            playing.data.map((item, index) => {
-              return (
-                <Carousel.Item>
-                  <a href={`/movie/${item.id}`}>
-                    <img
-                      className="d-block w-100"
-                      src={`${item.banner}`}
-                      alt="First slide"
-                    />
-                  </a>
-                  <Carousel.Caption>
-                    <h3>{item.title}</h3>
-                  </Carousel.Caption>
-                </Carousel.Item>
-              );
-            })}
+        {loading ? (
+          <div class="d-flex justify-content-center">
+            <div class="spinner-border" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+          </div>
+        ) : (
+          playing.data &&
+          playing.data.map((item, index) => {
+            return (
+              <Carousel.Item>
+                <a href={`/moviedetail/${item.id}`}>
+                  <img
+                    className="d-block w-100"
+                    src={`${item.banner}`}
+                    alt="First slide"
+                  />
+                </a>
+                <Carousel.Caption>
+                  <h3>{item.title}</h3>
+                </Carousel.Caption>
+              </Carousel.Item>
+            );
+          })
+        )}
       </Carousel>
     </>
   );
