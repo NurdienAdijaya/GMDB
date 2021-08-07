@@ -5,7 +5,6 @@ import { Modal } from "react-bootstrap";
 import Iframe from "react-iframe";
 import { Tabs, Tab } from "react-bootstrap";
 import StarRatings from "react-star-ratings";
-import "./moviedetailuper.css";
 import AllReview from "../components/AllReview";
 import { useDispatch, useSelector } from "react-redux";
 import { getMovieBackend } from "../store/actions/movieBackend";

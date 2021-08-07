@@ -20,7 +20,7 @@ const Routers = () => {
         <Route exact path="/moviedetail/:id">
           <MovieDetailUpper />
         </Route>
-        <Route exact path="/movie-detail/:id">
+        <Route exact path="/movie/:id">
           <MovieDetail/>
         </Route>
         <Route exact path="/">
