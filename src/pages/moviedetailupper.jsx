@@ -20,6 +20,9 @@ const MovieDetailUpper = () => {
     dispatch(getMovieDetail(id));
   }, [dispatch, id]);
 
+  const token = localStorage.getItem("Token");
+
+
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -61,7 +64,7 @@ const MovieDetailUpper = () => {
               </button>
               <Modal show={show} onHide={handleClose}>
                 <Modal.Body>
-                  <Iframe
+                  <Iframe className="content-youtube"
                     width="100%"
                     height="315"
                     url={`${BASE_YOUTUBE_EMBED}${detail.trailer}`}
@@ -71,8 +74,7 @@ const MovieDetailUpper = () => {
                   />
                 </Modal.Body>
               </Modal>
-
-              <button className="watchlist">Add to Watch List</button>
+              {token ?  (<button className="watchlist">Add to Watch List</button>) : null }
             </div>
           </div>
         </div>

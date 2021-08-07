@@ -8,7 +8,7 @@ import StarRatings from "react-star-ratings";
 import "./moviedetailuper.css";
 import AllReview from "../components/AllReview";
 import {useDispatch, useSelector} from "react-redux"
-import {getMovieDetail} from "../store/actions/movieDetail"
+import {getMovieBackend} from "../store/actions/movieBackend"
 
 
 const MovieDetail = () => {
@@ -16,8 +16,10 @@ const MovieDetail = () => {
   const {backend, loading} = useSelector((state) => state.movie.detailMovie);
   const { id } = useParams();
   useEffect(() => {
-    dispatch(getMovieDetail(id));
+    dispatch(getMovieBackend(id));
   }, [dispatch, id]);
+
+  const token = localStorage.getItem("Token");
 
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
@@ -25,7 +27,7 @@ const MovieDetail = () => {
 
   return (
     <>
-    {loading ? "loading..." : backend && backend ? 
+    {loading ? "loading..." : backend.data && backend.data ? 
     <div className="detail">
       <div
         className="Fullbgimage"
@@ -70,8 +72,7 @@ const MovieDetail = () => {
                   />
                 </Modal.Body>
               </Modal>
-
-              <button className="watchlist">Add to Watch List</button>
+              {token ?  (<button className="watchlist">Add to Watch List</button>) : null }
             </div>
           </div>
         </div>

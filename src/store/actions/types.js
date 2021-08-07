@@ -3,6 +3,9 @@ export const PROJECT_TITLE = "GMDB";
 export const GET_MOVIE_DETAIL_BEGIN = "GET_MOVIE_BEGIN";
 export const GET_MOVIE_DETAIL_SUCCESS = "GET_MOVIE_SUCCESS";
 export const GET_MOVIE_DETAIL_FAIL = "GET_MOVIE_FAIL";
+export const GET_GMDB_DETAIL_BEGIN = "GET_GMDB_BEGIN";
+export const GET_GMDB_DETAIL_SUCCESS = "GET_GMDB_SUCCESS";
+export const GET_GMDB_DETAIL_FAIL = "GET_GMDB_FAIL";
 
 export const BASE_URL = "http://localhost:4000";
 export const BASE_URL_USER = "http://localhost:4000/user";

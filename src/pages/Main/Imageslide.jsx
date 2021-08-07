@@ -20,7 +20,7 @@ const MovieCarousel = () => {
             playing.data.map((item, index) => {
               return (
                 <Carousel.Item>
-                  <a href={`/moviedetail/${item.id}`}>
+                  <a href={`/movie-detail/${item.id}`}>
                     <img
                       className="d-block w-100"
                       src={`${item.banner}`}
