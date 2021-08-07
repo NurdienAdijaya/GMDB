@@ -3,6 +3,9 @@ export const PROJECT_TITLE = "GMDB";
 export const GET_MOVIE_DETAIL_BEGIN = "GET_MOVIE_BEGIN";
 export const GET_MOVIE_DETAIL_SUCCESS = "GET_MOVIE_SUCCESS";
 export const GET_MOVIE_DETAIL_FAIL = "GET_MOVIE_FAIL";
+export const GET_GMDB_DETAIL_BEGIN = "GET_GMDB_BEGIN";
+export const GET_GMDB_DETAIL_SUCCESS = "GET_GMDB_SUCCESS";
+export const GET_GMDB_DETAIL_FAIL = "GET_GMDB_FAIL";
 
 export const BASE_URL = "http://localhost:4000";
 export const BASE_URL_USER = "http://localhost:4000/user";
@@ -10,12 +13,14 @@ export const BASE_URL_MOVIE = "http://localhost:4000/movie";
 export const BASE_URL_REVIEW = "http://localhost:4000/review";
 export const BASE_URL_SEARCH = "";
 export const BASE_YOUTUBE_EMBED = "https://www.youtube.com/embed";
+export const BASE_URL_TMDB_MOVIE ="https://api.themoviedb.org/3/movie/"
+
 export const BASE_URL_MOVIE_NOWPLAYING =
   "https://api.themoviedb.org/3/movie/now_playing";
 export const BASE_URL_MOVIE_IMG = "https://image.tmdb.org/t/p/original";
 
 // export const API_KEY = process.env.REACT_APP_API_KEY;
-export const API_KEY = `?api_key=${process.env.REACT_APP_API_KEY}`;
+export const API_KEY =`?api_key=${process.env.REACT_APP_API_KEY}`;
 
 export const GET_REVIEW_BEGIN = "GET_REVIEW_BEGIN";
 export const GET_REVIEW_SUCCESS = "GET_REVIEW_SUCCESS";

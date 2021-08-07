@@ -32,6 +32,7 @@ const reducerMovie = (state = initialState, action) => {
         ...state,
         listMovie: {
           loading: true,
+          error: null,
         },
       };
     case GET_MOVIES_SUCCESS:
@@ -52,20 +53,24 @@ const reducerMovie = (state = initialState, action) => {
       };
     case GET_MOVIE_DETAIL_BEGIN:
       return {
+        ...state,
         detailMovie: {
           loading: true,
+          error: null,
         },
       };
     case GET_MOVIE_DETAIL_SUCCESS:
       return {
+        ...state,
         detailMovie: {
-          detail: [],
+          detail: payload,
           loading: false,
           error: null,
         },
       };
     case GET_MOVIE_DETAIL_FAIL:
       return {
+        ...state,
         detailMovie: {
           detail: [],
           loading: false,
