@@ -5,7 +5,7 @@ import {
   } from "../actions/types";
   
   const initialState = {
-    backend: [],
+    detail: [],
     loading: false,
     error: null,
   };
