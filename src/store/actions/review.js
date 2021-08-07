@@ -13,8 +13,8 @@ export const getReview = () => async (dispatch) => {
     error: null,
   });
   try {
-    const res = await axios.get(BASE_URL_REVIEW);
-    console.log("ini res", res);
+    const res = await axios.get(`${BASE_URL_REVIEW}/610a359d0a4caa96bbb22a5e`);
+    // console.log("ini res", res);
     dispatch({
       type: GET_REVIEW_SUCCESS,
       loading: false,

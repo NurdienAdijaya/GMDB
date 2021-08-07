@@ -10,7 +10,7 @@ import { BASE_URL_SIGNIN_GMDB } from "../store/actions/types";
 
 const SignIn = (props) => {
   const { onclick, setShow } = props;
-  const { state, setState } = useState({
+  const [state, setState] = useState({
     email: "",
     password: "",
   });

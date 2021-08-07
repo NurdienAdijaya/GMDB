@@ -13,14 +13,14 @@ export const BASE_URL_MOVIE = "http://localhost:4000/movie";
 export const BASE_URL_REVIEW = "https://gmdb.gabatch13.my.id/review/movie";
 export const BASE_URL_SEARCH = "";
 export const BASE_YOUTUBE_EMBED = "https://www.youtube.com/embed";
-export const BASE_URL_TMDB_MOVIE ="https://api.themoviedb.org/3/movie/"
+export const BASE_URL_TMDB_MOVIE = "https://api.themoviedb.org/3/movie/";
 
 export const BASE_URL_MOVIE_NOWPLAYING =
   "https://api.themoviedb.org/3/movie/now_playing";
 export const BASE_URL_MOVIE_IMG = "https://image.tmdb.org/t/p/original";
 
 // export const API_KEY = process.env.REACT_APP_API_KEY;
-export const API_KEY =`?api_key=${process.env.REACT_APP_API_KEY}`;
+export const API_KEY = `?api_key=${process.env.REACT_APP_API_KEY}`;
 
 export const GET_REVIEW_BEGIN = "GET_REVIEW_BEGIN";
 export const GET_REVIEW_SUCCESS = "GET_REVIEW_SUCCESS";
