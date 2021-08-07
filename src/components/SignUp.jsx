@@ -1,41 +1,89 @@
+import axios from "axios";
+import { useState } from "react";
 import { Fragment } from "react";
 import { Button, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { PROJECT_TITLE } from "../store/actions/types";
-import "../styles/Modal.css";
+import { BASE_URL_SIGNUP_GMDB } from "../store/actions/types";
+import LogoProjectTitle from "./assets/LogoProjectTitle";
 
-export const SignUp = () => {
+export const SignUp = (props) => {
+  const { onClick, setShow } = props;
+  const [state, setState] = useState({
+    fullname: "",
+    username: "",
+    email: "",
+    password: "",
+  });
+
+  const add = (e) => {
+    e.preventDefault();
+    if (
+      state.fullname === "" ||
+      state.username === "" ||
+      state.email === "" ||
+      state.password === ""
+    ) {
+      alert("please fill all form");
+    } else {
+      axios.post(BASE_URL_SIGNUP_GMDB, state).then((res) => {
+        setShow(false);
+        alert("register successfully");
+      });
+    }
+  };
   return (
     <Fragment className="body ">
-      <Form className="modal-from">
-        <h2 className="bd-placeholder-img text-center" href="#">
-          <svg
-            className="mb-1"
-            width="50"
-            height="30"
-            viewBox="0 0 137 99"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <rect width="137" height="99" rx="20" fill="#FE024E" />
-          </svg>
-          {PROJECT_TITLE}
-        </h2>
+      <Form
+        onSubmit={add}
+        className="modal-from m-1 p-1"
+        style={{ width: "20rem" }}
+      >
+        <div
+          className="bd-placeholder-img text-center "
+          href="/"
+          style={{ margin: "0.5rem" }}
+        >
+          <LogoProjectTitle />
+        </div>
+        <Form.Group className="mb-2 mt-4">
+          <Form.Label>Full Name</Form.Label>
+          <Form.Control
+            value={state.fullname}
+            onChange={(e) => setState({ ...state, fullname: e.target.value })}
+            type="Full Name"
+            placeholder=""
+          />
+        </Form.Group>
+        <Form.Group className="mb-2 mt-4">
+          <Form.Label>Username</Form.Label>
+          <Form.Control
+            value={state.username}
+            onChange={(e) => setState({ ...state, username: e.target.value })}
+            type="Username"
+            placeholder=""
+          />
+        </Form.Group>
         <Form.Group className="mb-2 mt-4" controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
-          <Form.Control type="email" placeholder="" />
+          <Form.Control
+            value={state.email}
+            onChange={(e) => setState({ ...state, email: e.target.value })}
+            type="email"
+            placeholder=""
+          />
         </Form.Group>
 
         <Form.Group className="mb-2" controlId="formBasicPassword">
           <Form.Label>Password</Form.Label>
-          <Form.Control type="password" placeholder="" />
-        </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Label>Confirm Password</Form.Label>
-          <Form.Control type="password" placeholder="" />
+          <Form.Control
+            value={state.password}
+            onChange={(e) => setState({ ...state, password: e.target.value })}
+            type="password"
+            placeholder=""
+          />
         </Form.Group>
         <Button variant="primary" type="submit">
-          Login
+          Sign Up
         </Button>
         <p className="mt-5 text-muted text-center signFoot">
           have an account?{" "}

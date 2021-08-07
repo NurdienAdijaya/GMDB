@@ -3,8 +3,10 @@ import Main from "../pages/Main";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import MovieDetailUpper from "../pages/moviedetailupper";
+import movieDetail from "../pages/movieDetail"
 
 const Routers = () => {
+  const token = localStorage.getItem("Token");
   return (
     <>
       <Header />
@@ -17,6 +19,9 @@ const Routers = () => {
         </Route>
         <Route exact path="/moviedetail/:id">
           <MovieDetailUpper />
+        </Route>
+        <Route exact path="/movie-detail/:id">
+          <movieDetail/>
         </Route>
         <Route exact path="/">
           <Main />

@@ -1,32 +1,41 @@
-import React from 'react'
-import { Carousel } from 'react-bootstrap'
+import React, { useEffect } from "react";
+import { Carousel } from "react-bootstrap";
+import { useDispatch, useSelector } from "react-redux";
+import { getMoviePlaying } from "../../store/actions/movie";
 
-const Imageslide = () => {
-    return (
-            <Carousel fade>
-                <Carousel.Item>
-                    <img
-                    className="d-block w-100"
-                    src="https://image.tmdb.org/t/p/original/keIxh0wPr2Ymj0Btjh4gW7JJ89e.jpg"
-                    alt="First slide"
-                    />
-                </Carousel.Item>
-                <Carousel.Item>
-                    <img
-                    className="d-block w-100"
-                    src="https://image.tmdb.org/t/p/original/yizL4cEKsVvl17Wc1mGEIrQtM2F.jpg"
-                    alt="Second slide"
-                    />
-                </Carousel.Item>
-                <Carousel.Item>
-                    <img
-                    className="d-block w-100"
-                    src="https://image.tmdb.org/t/p/original/wjQXZTlFM3PVEUmKf1sUajjygqT.jpg"
-                    alt="Third slide"
-                    />
-                </Carousel.Item>
-            </Carousel>
-    )
-}
+const MovieCarousel = () => {
+  const dispatch = useDispatch();
+  const { playing, loading } = useSelector((state) => state.reducerMovieNurd);
+  console.log("playing", playing);
 
-export default Imageslide
+  useEffect(() => {
+    dispatch(getMoviePlaying());
+  }, [dispatch]);
+  return (
+    <>
+      <Carousel fade>
+        {loading
+          ? "loading..."
+          : playing.data &&
+            playing.data.map((item, index) => {
+              return (
+                <Carousel.Item>
+                  <a href={`/movie-detail/${item.id}`}>
+                    <img
+                      className="d-block w-100"
+                      src={`${item.banner}`}
+                      alt="First slide"
+                    />
+                  </a>
+                  <Carousel.Caption>
+                    <h3>{item.title}</h3>
+                  </Carousel.Caption>
+                </Carousel.Item>
+              );
+            })}
+      </Carousel>
+    </>
+  );
+};
+
+export default MovieCarousel;

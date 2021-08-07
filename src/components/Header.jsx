@@ -15,7 +15,6 @@ const Header = () => {
   const onOpenModal = () => setOpen(true);
   const onCloseModal = () => setOpen(false);
 
-  localStorage.setItem("Token", "This Is A Token");
   const token = localStorage.getItem("Token");
 
   const dispatch = useDispatch();
@@ -37,6 +36,11 @@ const Header = () => {
     };
   };
   const debounceSearch = debounce((e) => searchMovie(e));
+
+  const logout = () => {
+    localStorage.clear();
+    window.location.replace("/");
+  };
 
   return (
     <Fragment>
@@ -74,7 +78,9 @@ const Header = () => {
               <NavDropdown title="Hi, User" id="collasible-nav-dropdown">
                 <NavDropdown.Item href="/profile">Profile</NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item href="/">Sign Out</NavDropdown.Item>
+                <NavDropdown.Item onClick={logout} href="/">
+                  Sign Out
+                </NavDropdown.Item>
               </NavDropdown>
             </Nav>
           ) : (
