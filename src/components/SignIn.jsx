@@ -9,7 +9,7 @@ import axios from "axios";
 import { BASE_URL_SIGNIN_GMDB } from "../store/actions/types";
 
 const SignIn = (props) => {
-  const { setShow } = props;
+  const { onclick, setShow } = props;
   const { state, setState } = useState({
     email: "",
     password: "",
@@ -17,16 +17,18 @@ const SignIn = (props) => {
 
   const login = (e) => {
     e.preventDefault();
-    if (state.email === "" || state.password === "") {
-      alert("please fill all form");
+    if ((state.email === "") | (state.password === "")) {
+      alert("kolom kosong, tolong diisi terlebih dahulu");
+      return;
     } else {
-      axios.post(BASE_URL_SIGNIN_GMDB, state).then((res) => {
+      axios.post(`${BASE_URL_SIGNIN_GMDB}`, state).then((res) => {
         setShow(false);
         localStorage.setItem("Token", res.data.token);
         localStorage.setItem("USERID", res.data._id);
       });
     }
   };
+
   return (
     <Fragment className="body ">
       <Form

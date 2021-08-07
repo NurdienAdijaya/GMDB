@@ -16,7 +16,7 @@ const Header = () => {
   const onCloseModal = () => setOpen(false);
 
   localStorage.setItem("Token", "This Is A Token");
-  const token = localStorage.getItem("Token");
+  const token = localStorage.getItem("");
 
   const dispatch = useDispatch();
   const searchMovie = (e) => {

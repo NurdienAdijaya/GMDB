@@ -34,8 +34,8 @@ export default function Cardm() {
     return (
       <>
         <Container className=" d-flex flex-wrap justify-content-evenly">
-          {items.map((item) => (
-            <Card className="m-2" style={{ width: "13rem" }}>
+          {items.map((item, index) => (
+            <Card key={index} className="m-2" style={{ width: "13rem" }}>
               <a href={`/moviedetail/${item.id}`}>
                 <Card.Img
                   variant="top"
