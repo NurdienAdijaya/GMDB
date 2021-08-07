@@ -26,11 +26,7 @@
       "releasedate": "1994-09-22",
       "poster": "/4770806605845.jpg",
       "trailer": "/NmzuHjWmXOc",
-      "tags": [
-        "drama",
-        "crime",
-        "prison"
-      ],
+      "tags": ["drama", "crime", "prison"],
       "rating": 4.7
     },
     {
@@ -39,10 +35,7 @@
       "synopsis": "Cobb steals information from his targets by entering their dreams. Saito offers to wipe clean Cobb's criminal history as payment for performing an inception on his sick competitor's son.",
       "director": "Christopher Nolan",
       "poster": "/3471141049944.jpg",
-      "tags": [
-        "action",
-        "sci-fi"
-      ],
+      "tags": ["action", "sci-fi"],
       "rating": 4.8
     },
     {
@@ -53,10 +46,7 @@
       "releasedate": "1998-01-05",
       "trailer": "/CHekzSiZjrY",
       "poster": "/5163604765241.jpg",
-      "tags": [
-        "romance",
-        "drama"
-      ],
+      "tags": ["romance", "drama"],
       "rating": 3.9
     },
     {
@@ -67,10 +57,7 @@
       "releasedate": "2016-02-03",
       "trailer": "/LoebZZ8K5N0",
       "poster": "/7818529098707.jpg",
-      "tags": [
-        "western",
-        "drama"
-      ],
+      "tags": ["western", "drama"],
       "rating": 4
     },
     {
@@ -81,10 +68,7 @@
       "releasedate": "2013-06-26",
       "trailer": "/WfaTlmYvTA8",
       "poster": "/8748114691874.jpg",
-      "tags": [
-        "action",
-        "thriller"
-      ],
+      "tags": ["action", "thriller"],
       "rating": 3.9
     },
     {
@@ -95,10 +79,7 @@
       "releasedate": "2013-02-13",
       "trailer": "/0fUCuvNlOCg",
       "poster": "/9724739911967.jpg",
-      "tags": [
-        "western",
-        "action"
-      ],
+      "tags": ["western", "action"],
       "rating": 4.2
     },
     {
@@ -109,10 +90,7 @@
       "releasedate": "2012-04-18",
       "trailer": "/RLoKtb4c4W0",
       "poster": "/6201190084976.jpg",
-      "tags": [
-        "comedy",
-        "action"
-      ],
+      "tags": ["comedy", "action"],
       "rating": 3.6
     }
   ],
@@ -144,59 +122,6 @@
       },
       "content": "Channing Tatum is so hot and so silly at the same time lmao.",
       "rating": 4.5
-    },
-    {
-      "id": 1234567,
-      "content": "tes",
-      "rating": 3
-    },
-    {
-      "_id": 1234567,
-      "content": "tes",
-      "rating": 3,
-      "id": 1234568
-    },
-    {
-      "_id": 1234567,
-      "content": "wkwkwkw",
-      "rating": 3,
-      "id": 1234569
-    },
-    {
-      "_id": 1234567,
-      "content": "hahahah",
-      "rating": 3,
-      "id": 1234570
-    },
-    {
-      "_id": 1234567,
-      "content": "rating 6",
-      "rating": 3,
-      "id": 1234571
-    },
-    {
-      "_id": 1234567,
-      "content": "rating 6",
-      "rating": 3,
-      "id": 1234572
-    },
-    {
-      "_id": 1234567,
-      "content": "eeee",
-      "rating": 4,
-      "id": 1234573
-    },
-    {
-      "_id": 1234567,
-      "content": "harusnya 2,5 bintang",
-      "rating": 2.5,
-      "id": 1234574
-    },
-    {
-      "_id": 1234567,
-      "content": "harusnya 2,5",
-      "rating": 2.5,
-      "id": 1234575
     }
   ]
 }

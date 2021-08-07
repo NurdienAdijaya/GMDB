@@ -14,10 +14,11 @@ export const getReview = () => async (dispatch) => {
   });
   try {
     const res = await axios.get(BASE_URL_REVIEW);
+    console.log("ini res", res);
     dispatch({
       type: GET_REVIEW_SUCCESS,
       loading: false,
-      payload: res.data,
+      payload: res.data.data,
       error: null,
     });
   } catch (err) {
