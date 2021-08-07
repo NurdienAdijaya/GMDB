@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import "react-responsive-modal/styles.css";
 import { Modal } from "react-responsive-modal";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -7,18 +7,27 @@ import LogoProjectTitle from "./assets/LogoProjectTitle";
 import SignIn from "./SignIn";
 import { Route, Switch } from "react-router-dom";
 import { SignUp } from "./SignUp";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { clearItem, searchItem } from "../store/actions/searchMovie";
+import { getUser } from "../store/actions/user";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
   const onOpenModal = () => setOpen(true);
   const onCloseModal = () => setOpen(false);
 
-  localStorage.setItem("Token", "This Is A Token");
-  const token = localStorage.getItem("");
+  const token = localStorage.getItem("Token");
+  const userId = localStorage.getItem("UserId");
+  console.log(userId);
 
   const dispatch = useDispatch();
+  const { user, loading } = useSelector((state) => state.reducerMovieNurd);
+  console.log("user", user);
+
+  useEffect(() => {
+    dispatch(getUser());
+  }, [dispatch]);
+
   const searchMovie = (e) => {
     if (e.target.value) {
       dispatch(searchItem(e.target.value));
@@ -101,10 +110,10 @@ const Header = () => {
               <Modal open={open} onClose={onCloseModal} center>
                 <Switch>
                   <Route exact path="/">
-                    <SignIn />
+                    <SignIn setOpen={setOpen} />
                   </Route>
                   <Route path="/signup">
-                    <SignUp />
+                    <SignUp setOpen={setOpen} />
                   </Route>
                 </Switch>
               </Modal>

@@ -54,6 +54,7 @@ export const BASE_URL_GMDB = "https://gmdb.gabatch13.my.id/";
 export const BASE_URL_SETROLE_GMDB = "https://gmdb.gabatch13.my.id/setrole/";
 
 export const BASE_URL_USER_GMDB = "https://gmdb.gabatch13.my.id/user/";
+export const BASE_URL_ME_GMDB = "https://gmdb.gabatch13.my.id/user/me";
 export const BASE_URL_SIGNUP_GMDB = "https://gmdb.gabatch13.my.id/user/signup/";
 export const BASE_URL_SIGNIN_GMDB = "https://gmdb.gabatch13.my.id/user/signin/";
 
@@ -61,3 +62,7 @@ export const BASE_URL_MOVIE_GMDB = "https://gmdb.gabatch13.my.id/movie";
 export const BASE_URL_REVIEW_GMDB =
   "https://gmdb.gabatch13.my.id/review/movie/";
 export const BASE_URL_SEARCH_GMDB = "";
+
+export const GET_USER_BEGIN = "GET_USER_BEGIN";
+export const GET_USER_SUCCESS = "GET_USER_SUCCESS";
+export const GET_USER_FAIL = "GET_USER_FAIL";

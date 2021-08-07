@@ -3,17 +3,19 @@ import { Button, Form } from "react-bootstrap";
 import "react-responsive-modal/styles.css";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-
 import LogoProjectTitle from "./assets/LogoProjectTitle";
 import axios from "axios";
 import { BASE_URL_SIGNIN_GMDB } from "../store/actions/types";
 
 const SignIn = (props) => {
-  const { onclick, setShow } = props;
-  const { state, setState } = useState({
+  const { onclick, setOpen } = props;
+  const [state, setState] = useState({
     email: "",
     password: "",
   });
+  const refreshPage = () => {
+    window.location.reload();
+  };
 
   const login = (e) => {
     e.preventDefault();
@@ -21,9 +23,10 @@ const SignIn = (props) => {
       alert("please fill all form");
     } else {
       axios.post(BASE_URL_SIGNIN_GMDB, state).then((res) => {
-        setShow(false);
+        setOpen(false);
         localStorage.setItem("Token", res.data.token);
         localStorage.setItem("USERID", res.data._id);
+        refreshPage();
       });
     }
   };
