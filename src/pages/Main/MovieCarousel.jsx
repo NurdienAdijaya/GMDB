@@ -6,17 +6,16 @@ import { getMovieBanner } from "../../store/actions/movie";
 const MovieCarousel = () => {
   const dispatch = useDispatch();
   const { playing, loading } = useSelector((state) => state.reducerMovieBanner);
-  console.log(playing);
   useEffect(() => {
     dispatch(getMovieBanner());
   }, [dispatch]);
   return (
-    <>
-      <Carousel fade>
+    <div className="container-fluid" style={{ maxWidth: "75rem" }}>
+      <Carousel fade className="justify-content-md-center">
         {loading ? (
-          <div class="d-flex justify-content-center">
-            <div class="spinner-border" role="status">
-              <span class="visually-hidden">Loading...</span>
+          <div className="d-flex justify-content-center">
+            <div className="spinner-border" role="status">
+              <span className="visually-hidden">Loading...</span>
             </div>
           </div>
         ) : (
@@ -45,7 +44,7 @@ const MovieCarousel = () => {
           })
         )}
       </Carousel>
-    </>
+    </div>
   );
 };
 

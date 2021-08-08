@@ -1,7 +1,7 @@
 import {
-  GET_MOVIES_BEGIN,
-  GET_MOVIES_FAIL,
-  GET_MOVIES_SUCCESS,
+  GET_MOVIES_BANNER_BEGIN,
+  GET_MOVIES_BANNER_FAIL,
+  GET_MOVIES_BANNER_SUCCESS,
 } from "../actions/types";
 
 const initialState = {
@@ -17,18 +17,18 @@ const reducerMovieBanner = (state = initialState, action) => {
       return {
         ...state,
       };
-    case GET_MOVIES_BEGIN:
+    case GET_MOVIES_BANNER_BEGIN:
       return {
         ...state,
         loading: true,
       };
-    case GET_MOVIES_SUCCESS:
+    case GET_MOVIES_BANNER_SUCCESS:
       return {
         playing: payload,
         loading: false,
         error: null,
       };
-    case GET_MOVIES_FAIL:
+    case GET_MOVIES_BANNER_FAIL:
       return {
         playing: [],
         loading: false,
