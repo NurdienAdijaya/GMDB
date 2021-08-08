@@ -1,5 +1,5 @@
 import axios from "axios";
-import { BASE_URL_TMDB_MOVIE, API_KEY, BASE_URL_MOVIE_GMDB } from "./types";
+import { BASE_URL_MOVIE_GMDB } from "./types";
 import {
   GET_MOVIE_DETAIL_BEGIN,
   GET_MOVIE_DETAIL_SUCCESS,
