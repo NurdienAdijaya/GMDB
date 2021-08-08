@@ -4,8 +4,12 @@ import {
   GET_MOVIES_SUCCESS,
   GET_MOVIES_FAIL,
   BASE_URL_MOVIE_GMDB,
+  SEARCH_BEGIN,
+  SEARCH_FAIL,
+  SEARCH_SUCCESS,
+  CLEAR,
+  BASE_URL_SEARCH_TITLE_GMDB,
 } from "./types";
-import { BASE_URL_MOVIE } from "./types";
 
 export const getMovie = () => async (dispatch) => {
   dispatch({
@@ -14,7 +18,7 @@ export const getMovie = () => async (dispatch) => {
     error: null,
   });
   try {
-    const res = await axios.get(BASE_URL_MOVIE);
+    const res = await axios.get(`${BASE_URL_MOVIE_GMDB}?offset=0&limit=10`);
     dispatch({
       type: GET_MOVIES_SUCCESS,
       loading: false,
@@ -29,8 +33,7 @@ export const getMovie = () => async (dispatch) => {
   }
 };
 
-
-export const getMoviePlaying = () => async (dispatch) => {
+export const getMovieBanner = () => async (dispatch) => {
   dispatch({
     type: GET_MOVIES_BEGIN,
     loading: true,
@@ -50,4 +53,32 @@ export const getMoviePlaying = () => async (dispatch) => {
       error: err.response,
     });
   }
+};
+
+export const searchItem = (body) => async (dispatch) => {
+  dispatch({
+    type: SEARCH_BEGIN,
+    loading: true,
+    error: null,
+  });
+  try {
+    const res = await axios.get(`${BASE_URL_SEARCH_TITLE_GMDB}${body}`);
+    dispatch({
+      type: SEARCH_SUCCESS,
+      loading: false,
+      payload: res.data,
+      error: null,
+    });
+  } catch (err) {
+    dispatch({
+      type: SEARCH_FAIL,
+      error: err.response,
+    });
+  }
+};
+
+export const clearItem = () => {
+  return {
+    type: CLEAR,
+  };
 };

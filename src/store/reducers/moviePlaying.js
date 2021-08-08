@@ -10,7 +10,7 @@ const initialState = {
   error: null,
 };
 
-const reducerMovieNurd = (state = initialState, action) => {
+const reducerMovieBanner = (state = initialState, action) => {
   const { type, payload, error } = action;
   switch (type) {
     default:
@@ -36,4 +36,4 @@ const reducerMovieNurd = (state = initialState, action) => {
       };
   }
 };
-export default reducerMovieNurd;
+export default reducerMovieBanner;

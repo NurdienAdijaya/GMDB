@@ -8,8 +8,8 @@ import SignIn from "./SignIn";
 import { Route, Switch } from "react-router-dom";
 import { SignUp } from "./SignUp";
 import { useDispatch, useSelector } from "react-redux";
-import { clearItem, searchItem } from "../store/actions/searchMovie";
 import { getUser } from "../store/actions/user";
+import { clearItem, searchItem } from "../store/actions/movie";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
@@ -21,8 +21,8 @@ const Header = () => {
   console.log(userId);
 
   const dispatch = useDispatch();
-  const { user, loading } = useSelector((state) => state.reducerMovieNurd);
-  console.log("user", user);
+  // const { user, loading } = useSelector((state) => state.reducerMovieNurd);
+  // console.log("user", user);
 
   useEffect(() => {
     dispatch(getUser());

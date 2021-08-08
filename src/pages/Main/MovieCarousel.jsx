@@ -1,15 +1,14 @@
 import React, { useEffect } from "react";
-import { Carousel } from "react-bootstrap";
+import { Carousel, Spinner } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { getMoviePlaying } from "../../store/actions/movie";
+import { getMovieBanner } from "../../store/actions/movie";
 
 const MovieCarousel = () => {
   const dispatch = useDispatch();
-  const { playing, loading } = useSelector((state) => state.reducerMovieNurd);
-  console.log("playing", playing);
+  const { playing, loading } = useSelector((state) => state.reducerMovieBanner);
 
   useEffect(() => {
-    dispatch(getMoviePlaying());
+    dispatch(getMovieBanner());
   }, [dispatch]);
   return (
     <>
@@ -28,7 +27,13 @@ const MovieCarousel = () => {
                 <a href={`/moviedetail/${item.id}`}>
                   <img
                     className="d-block w-100"
-                    src={`${item.banner}`}
+                    src={
+                      item.banner ? (
+                        `${item.banner}`
+                      ) : (
+                        <Spinner animation="grow" variant="danger" />
+                      )
+                    }
                     alt="First slide"
                   />
                 </a>
