@@ -6,12 +6,13 @@ import { addReview } from "../store/actions/submitReview";
 import "../styles/PostReview.css";
 import { Button, Form, Card, CardImg } from "react-bootstrap";
 import StarRating from "./StarRating";
+import ChangeReview from "./ChangeReview";
 
 function AllReview() {
   const dispatch = useDispatch();
   const { review, loading } = useSelector((state) => state.reducerReview);
   const [reviews, setReviews] = useState("");
-  const [rating, setRating] = useState(0);
+  const [rating, setRating] = useState(0.0);
   const [headline, setHeadline] = useState("");
   // console.log("reviews", reviews);
 
@@ -30,14 +31,13 @@ function AllReview() {
   const changeInput = (e) => {
     setReviews(e.target.value);
   };
-  const onSubmitReview = (e) => {
+  const onSubmitReview = async (e) => {
     e.preventDefault();
-    // console.log("submit");
     if (reviews) {
-      dispatch(
+      await dispatch(
         addReview({ reviews: reviews, isDone: false, rating, headline })
       );
-      dispatch(getReview());
+      await dispatch(getReview());
     }
   };
   const ratingInput = (rate) => {
@@ -50,7 +50,11 @@ function AllReview() {
           <Card.Body>
             <CardImg />
             <Card.Title>User Name</Card.Title>
-            <StarRating value={rating} setValue={ratingInput} />
+            <StarRating
+              name="main-rating"
+              value={rating}
+              setValue={ratingInput}
+            />
             <Form onSubmit={onSubmitReview}>
               <Form.Group
                 className="mb-3"
@@ -86,8 +90,16 @@ function AllReview() {
             : review.map((item, index) => {
                 return (
                   <div key={index}>
+                    <li>{item.headline}</li>
                     <li>{item.content}</li>
                     <li>{item.rating}</li>
+                    {/* {console.log(item)} */}
+                    <ChangeReview
+                      id={item.id}
+                      headline={item.headline}
+                      content={item.content}
+                      rating={item.rating}
+                    />
                   </div>
                 );
               })}
