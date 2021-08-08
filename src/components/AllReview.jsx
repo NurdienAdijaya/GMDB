@@ -12,6 +12,7 @@ function AllReview() {
   const { review, loading } = useSelector((state) => state.reducerReview);
   const [reviews, setReviews] = useState("");
   const [rating, setRating] = useState(0);
+  const [headline, setHeadline] = useState("");
   // console.log("reviews", reviews);
 
   useEffect(() => {
@@ -33,13 +34,14 @@ function AllReview() {
     e.preventDefault();
     // console.log("submit");
     if (reviews) {
-      dispatch(addReview({ reviews: reviews, isDone: false, rating }));
+      dispatch(
+        addReview({ reviews: reviews, isDone: false, rating, headline })
+      );
       dispatch(getReview());
     }
   };
   const ratingInput = (rate) => {
     setRating(rate);
-    console.log("udah bisa");
   };
   return (
     <div>
@@ -54,6 +56,13 @@ function AllReview() {
                 className="mb-3"
                 controlId="exampleForm.ControlTextarea1"
               >
+                <Form.Control
+                  onChange={(e) => setHeadline(e.target.value)}
+                  value={headline}
+                  // as="text"
+                  rows={3}
+                  placeholder="Headline"
+                />
                 <Form.Control
                   onChange={changeInput}
                   value={reviews}
