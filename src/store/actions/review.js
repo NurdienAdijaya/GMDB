@@ -13,7 +13,9 @@ export const getReview = () => async (dispatch) => {
     error: null,
   });
   try {
-    const res = await axios.get(`${BASE_URL_REVIEW}/610a359d0a4caa96bbb22a5e`);
+    const res = await axios.get(
+      `${BASE_URL_REVIEW}/movie/610a359d0a4caa96bbb22a6a`
+    );
     // console.log("ini res", res);
     dispatch({
       type: GET_REVIEW_SUCCESS,
