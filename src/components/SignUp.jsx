@@ -7,7 +7,7 @@ import { BASE_URL_SIGNUP_GMDB } from "../store/actions/types";
 import LogoProjectTitle from "./assets/LogoProjectTitle";
 
 export const SignUp = (props) => {
-  const { onClick, setShow } = props;
+  const { onClick, setOpen } = props;
   const [state, setState] = useState({
     fullname: "",
     username: "",
@@ -26,7 +26,7 @@ export const SignUp = (props) => {
       alert("please fill all form");
     } else {
       axios.post(BASE_URL_SIGNUP_GMDB, state).then((res) => {
-        setShow(false);
+        setOpen(false);
         alert("register successfully");
       });
     }
