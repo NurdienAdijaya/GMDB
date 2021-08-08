@@ -3,9 +3,6 @@ export const PROJECT_TITLE = "GMDB";
 export const GET_MOVIE_DETAIL_BEGIN = "GET_MOVIE_BEGIN";
 export const GET_MOVIE_DETAIL_SUCCESS = "GET_MOVIE_SUCCESS";
 export const GET_MOVIE_DETAIL_FAIL = "GET_MOVIE_FAIL";
-export const GET_GMDB_DETAIL_BEGIN = "GET_GMDB_BEGIN";
-export const GET_GMDB_DETAIL_SUCCESS = "GET_GMDB_SUCCESS";
-export const GET_GMDB_DETAIL_FAIL = "GET_GMDB_FAIL";
 
 export const BASE_URL = "http://localhost:4000";
 export const BASE_URL_USER = "http://localhost:4000/user";
@@ -59,6 +56,7 @@ export const BASE_URL_GMDB = "https://gmdb.gabatch13.my.id/";
 export const BASE_URL_SETROLE_GMDB = "https://gmdb.gabatch13.my.id/setrole/";
 
 export const BASE_URL_USER_GMDB = "https://gmdb.gabatch13.my.id/user/";
+export const BASE_URL_ME_GMDB = "https://gmdb.gabatch13.my.id/user/me";
 export const BASE_URL_SIGNUP_GMDB = "https://gmdb.gabatch13.my.id/user/signup/";
 export const BASE_URL_SIGNIN_GMDB = "https://gmdb.gabatch13.my.id/user/signin/";
 
@@ -66,3 +64,13 @@ export const BASE_URL_MOVIE_GMDB = "https://gmdb.gabatch13.my.id/movie";
 export const BASE_URL_REVIEW_GMDB =
   "https://gmdb.gabatch13.my.id/review/movie/";
 export const BASE_URL_SEARCH_GMDB = "";
+export const BASE_URL_ACTOR_GMDB = "https://gmdb.gabatch13.my.id/actor/"
+
+export const GET_USER_BEGIN = "GET_USER_BEGIN";
+export const GET_USER_SUCCESS = "GET_USER_SUCCESS";
+export const GET_USER_FAIL = "GET_USER_FAIL";
+
+export const GET_ACTOR_BEGIN = "GET_ACTOR_BEGIN";
+export const GET_ACTOR_SUCCESS = "GET_ACTOR_SUCCESS";
+export const GET_ACTOR_FAIL = "GET_ACTOR_FAIL";
+
