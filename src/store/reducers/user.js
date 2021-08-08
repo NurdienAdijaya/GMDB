@@ -23,13 +23,13 @@ const reducerUser = (state = initialState, action) => {
       };
     case GET_USER_SUCCESS:
       return {
-        playing: payload,
+        user: payload,
         loading: false,
         error: null,
       };
     case GET_USER_FAIL:
       return {
-        playing: [],
+        user: [],
         loading: false,
         error: error,
       };
