@@ -6,7 +6,7 @@ import { getMovieBanner } from "../../store/actions/movie";
 const MovieCarousel = () => {
   const dispatch = useDispatch();
   const { playing, loading } = useSelector((state) => state.reducerMovieBanner);
-
+  console.log(playing);
   useEffect(() => {
     dispatch(getMovieBanner());
   }, [dispatch]);

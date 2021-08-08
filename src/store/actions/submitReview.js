@@ -9,14 +9,18 @@ import {
 export const addReview = (item) => async (dispatch) => {
   console.log(typeof item.reviews);
   const newData = { _id: 1234567, content: item.reviews, rating: item.rating };
-  // const nData = { headline: "1234567", content: item.reviews, rating: item };
+  // const nData = { headline: "1234567", content: item.reviews, rating: item }; <<<PERSIAPAN KALAU SUDAH ON
   dispatch({
     type: SUBMIT_REVIEW_BEGIN,
     loading: true,
     error: null,
   });
   try {
-    const res = await axios.post(BASE_URL_REVIEW, newData);
+    const res = await axios.post(
+      BASE_URL_REVIEW,
+      newData
+      // { headers: { Authorization: token } }
+    );
     console.log(res);
     dispatch({
       type: SUBMIT_REVIEW_SUCCESS,
