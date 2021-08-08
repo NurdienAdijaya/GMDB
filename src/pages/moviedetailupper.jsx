@@ -9,7 +9,7 @@ import "./moviedetailuper.css";
 import AllReview from "../components/AllReview";
 import { useDispatch, useSelector } from "react-redux";
 import { getMovieDetail } from "../store/actions/movieDetail";
-import CardActors from "../components/CardActor";
+import { Card } from "react-bootstrap";
 
 const MovieDetailUpper = () => {
   const dispatch = useDispatch();
@@ -106,8 +106,29 @@ const MovieDetailUpper = () => {
                   </div>
                 </Tab>
                 <Tab eventKey="Characters" title="Characters">
-                  <p>Characters</p>
-                  <CardActors />
+                  <div>
+                    {loading
+                      ? "Loading..."
+                      : detail.data.actors &&
+                        detail.data.actors.map((item, index) => {
+                          return (
+                            <div key={index}>
+                              <Card
+                                className="AktorCard"
+                                style={{ width: "15rem" }}
+                              >
+                                <Card.Img
+                                  className="Actorimage"
+                                  src={`${item.image}`}
+                                />
+                                <Card.Body>
+                                  <Card.Title>{item.name}</Card.Title>
+                                </Card.Body>
+                              </Card>
+                            </div>
+                          );
+                        })}
+                  </div>
                 </Tab>
                 <Tab eventKey="Review" title="Review">
                   {/* BAGIAN REVIEW */}
