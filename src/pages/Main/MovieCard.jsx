@@ -6,6 +6,7 @@ const MovieCard = ({ ...props }) => {
       <a href={`/moviedetail/${data.id}`} key={index}>
         <div key={index}>
           <img
+            className="rounded"
             src={data.banner ? `${data.thumbnail}` : data.rating}
             alt={data.name}
             style={{ maxWidth: "200px" }}

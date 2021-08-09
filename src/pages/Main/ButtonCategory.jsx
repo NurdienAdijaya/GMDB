@@ -20,7 +20,7 @@ function ButtonCategory(button, filter) {
               type="button"
               className="btn rounded-pill m-1"
               style={{
-                background: "#EB507F",
+                background: "#FE024E",
                 border: "#FE024E",
                 color: "white",
               }}
@@ -31,7 +31,7 @@ function ButtonCategory(button, filter) {
               type="button"
               className="btn rounded-pill m-1"
               style={{
-                background: "#EB507F",
+                background: "#FE024E",
                 border: "#FE024E",
                 color: "white",
               }}
@@ -42,7 +42,7 @@ function ButtonCategory(button, filter) {
               type="button"
               className="btn rounded-pill m-1"
               style={{
-                background: "#EB507F",
+                background: "#FE024E",
                 border: "#FE024E",
                 color: "white",
               }}
@@ -53,7 +53,7 @@ function ButtonCategory(button, filter) {
               type="button"
               className="btn rounded-pill m-1"
               style={{
-                background: "#EB507F",
+                background: "#FE024E",
                 border: "#FE024E",
                 color: "white",
               }}
@@ -64,7 +64,7 @@ function ButtonCategory(button, filter) {
               type="button"
               className="btn rounded-pill m-1"
               style={{
-                background: "#EB507F",
+                background: "#FE024E",
                 border: "#FE024E",
                 color: "white",
               }}
