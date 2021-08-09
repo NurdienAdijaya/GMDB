@@ -70,7 +70,7 @@ const Header = () => {
               {window.location.pathname === "/" ||
               window.location.pathname === "/signup" ? (
                 <input
-                  style={{ maxWidth: "75rem" }}
+                  style={{ Width: "300px" }}
                   className="form-control me-2"
                   type="search"
                   placeholder="Search Movie"

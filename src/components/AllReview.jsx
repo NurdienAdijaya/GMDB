@@ -9,7 +9,8 @@ import StarRating from "./StarRating";
 import ChangeReview from "./ChangeReview";
 import { useParams } from "react-router-dom";
 
-function AllReview() {
+function AllReview({ ...props }) {
+  const { idMovie } = props;
   const dispatch = useDispatch();
   const { review, loading } = useSelector((state) => state.reducerReview);
   const [reviews, setReviews] = useState("");
@@ -34,16 +35,23 @@ function AllReview() {
     e.preventDefault();
     if (reviews) {
       await dispatch(
-        addReview({
-          id,
-          token,
-          reviews: reviews,
-          isDone: false,
-          rating,
-          headline,
-        })
+        addReview(
+          {
+            id,
+            token,
+            reviews: reviews,
+            isDone: false,
+            rating,
+            headline,
+          },
+          (response) => {
+            if (response.data.code === 201) {
+              dispatch(getReview(idMovie));
+              console.log("id callback ", idMovie);
+            }
+          }
+        )
       );
-      await dispatch(getReview(id));
     }
   };
   const ratingInput = (rate) => {
@@ -98,11 +106,11 @@ function AllReview() {
                 return (
                   <div key={index}>
                     <Card className="m-3">
-                      <Card.Header>{item.user.username}</Card.Header>
-                      <Card.Header>{item.headline}</Card.Header>
+                      <Card.Header>{item?.user?.username}</Card.Header>
+                      <Card.Header>{item?.headline}</Card.Header>
                       <Card.Body>
-                        <Card.Title>{item.rating}</Card.Title>
-                        <Card.Text>{item.content}</Card.Text>
+                        <Card.Title>{item?.rating}</Card.Title>
+                        <Card.Text>{item?.content}</Card.Text>
                         {currentUser && currentUser.id === item.user.id ? (
                           <ChangeReview
                             id={item.id}
