@@ -6,14 +6,18 @@ import {
   GET_USER_SUCCESS,
 } from "./types";
 
-export const getUser = () => async (dispatch) => {
+export const getUser = (Token) => async (dispatch) => {
   dispatch({
     type: GET_USER_BEGIN,
     loading: true,
     error: null,
   });
   try {
-    const res = await axios.get(`${BASE_URL_ME_GMDB}`);
+    const res = await axios.get(`${BASE_URL_ME_GMDB}`, {
+      headers: {
+        Authorization: `Bearer ${Token}`,
+      },
+    });
     dispatch({
       type: GET_USER_SUCCESS,
       loading: false,

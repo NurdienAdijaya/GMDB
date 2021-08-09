@@ -35,17 +35,9 @@ export const GET_MOVIES_BEGIN = "GET_MOVIES_BEGIN";
 export const GET_MOVIES_SUCCESS = "GET_MOVIES_SUCCESS";
 export const GET_MOVIES_FAIL = "GET_MOVIES_FAIL";
 
-export const REGISTER_BEGIN = "REGISTER_BEGIN";
-export const REGISTER_SUCCESS = "REGISTER_SUCCESS";
-export const REGISTER_FAIL = "REGISTER_FAIL";
-
-export const LOGIN_BEGIN = "LOGIN_BEGIN";
-export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
-export const LOGIN_FAIL = "LOGIN_FAIL";
-
-export const LOGOUT_BEGIN = "LOGOUT_BEGIN";
-export const LOGOUT_SUCCESS = "LOGOUT_SUCCESS";
-export const LOGOUT_FAIL = "LOGOUT_FAIL";
+export const GET_MOVIES_BANNER_BEGIN = "GET_MOVIES_BANNER_BEGIN";
+export const GET_MOVIES_BANNER_SUCCESS = "GET_MOVIES_BANNER_SUCCESS";
+export const GET_MOVIES_BANNER_FAIL = "GET_MOVIES_BANNER_FAIL";
 
 export const SEARCH_BEGIN = "SEARCH_BEGIN";
 export const SEARCH_SUCCESS = "SEARCH_SUCCESS";
@@ -54,17 +46,17 @@ export const CLEAR = "CLEAR";
 
 export const BASE_URL_GMDB = "https://gmdb.gabatch13.my.id/";
 export const BASE_URL_SETROLE_GMDB = "https://gmdb.gabatch13.my.id/setrole/";
-
 export const BASE_URL_USER_GMDB = "https://gmdb.gabatch13.my.id/user/";
 export const BASE_URL_ME_GMDB = "https://gmdb.gabatch13.my.id/user/me";
 export const BASE_URL_SIGNUP_GMDB = "https://gmdb.gabatch13.my.id/user/signup/";
 export const BASE_URL_SIGNIN_GMDB = "https://gmdb.gabatch13.my.id/user/signin/";
-
 export const BASE_URL_MOVIE_GMDB = "https://gmdb.gabatch13.my.id/movie";
 export const BASE_URL_REVIEW_GMDB =
   "https://gmdb.gabatch13.my.id/review/movie/";
+export const BASE_URL_SEARCH_TITLE_GMDB =
+  "https://gmdb.gabatch13.my.id/movie/title/";
 export const BASE_URL_SEARCH_GMDB = "";
-export const BASE_URL_ACTOR_GMDB = "https://gmdb.gabatch13.my.id/actor/"
+export const BASE_URL_ACTOR_GMDB = "https://gmdb.gabatch13.my.id/actor/";
 
 export const GET_USER_BEGIN = "GET_USER_BEGIN";
 export const GET_USER_SUCCESS = "GET_USER_SUCCESS";
@@ -73,4 +65,3 @@ export const GET_USER_FAIL = "GET_USER_FAIL";
 export const GET_ACTOR_BEGIN = "GET_ACTOR_BEGIN";
 export const GET_ACTOR_SUCCESS = "GET_ACTOR_SUCCESS";
 export const GET_ACTOR_FAIL = "GET_ACTOR_FAIL";
-

@@ -13,7 +13,9 @@ import { Card } from "react-bootstrap";
 
 const MovieDetailUpper = () => {
   const dispatch = useDispatch();
-  const { detail, loading } = useSelector((state) => state.movie.detailMovie);
+  const { detail, loading } = useSelector(
+    (state) => state.reducerMovie.detailMovie
+  );
   const { id } = useParams();
   useEffect(() => {
     dispatch(getMovieDetail(id));
@@ -130,7 +132,7 @@ const MovieDetailUpper = () => {
                 </Tab>
                 <Tab eventKey="Review" title="Review">
                   {/* BAGIAN REVIEW */}
-                  <AllReview />
+                  <AllReview token={token} id={id} />
                 </Tab>
               </Tabs>
             </div>

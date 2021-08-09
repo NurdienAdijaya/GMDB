@@ -17,7 +17,7 @@ const Routers = () => {
           <Main />
         </Route>
         <Route exact path="/moviedetail/:id">
-          <MovieDetailUpper />
+          <MovieDetailUpper token={token} />
         </Route>
         <Route exact path="/">
           <Main />
