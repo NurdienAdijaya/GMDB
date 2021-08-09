@@ -113,6 +113,7 @@ function AllReview() {
                       <Card.Body>
                         <Card.Title>{item.rating}</Card.Title>
                         <Card.Text>{item.content}</Card.Text>
+
                         {currentUser.id === item.user.id ? (
                           <ChangeReview
                             id={item.id}

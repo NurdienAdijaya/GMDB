@@ -65,8 +65,8 @@ const Header = () => {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="me-auto">
-            <form className="d-flex">
+          <Nav className="me-auto ">
+            <form className=" d-flex">
               {window.location.pathname === "/" ||
               window.location.pathname === "/signup" ? (
                 <input
@@ -113,6 +113,10 @@ const Header = () => {
               <Modal open={open} onClose={onCloseModal} center>
                 <Switch>
                   <Route exact path="/">
+                    <SignIn setOpen={setOpen} />
+                  </Route>
+
+                  <Route exact path="/login">
                     <SignIn setOpen={setOpen} />
                   </Route>
                   <Route path="/signup">

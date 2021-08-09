@@ -8,6 +8,7 @@ import axios from "axios";
 import { BASE_URL_SIGNIN_GMDB } from "../store/actions/types";
 
 const SignIn = (props) => {
+  // eslint-disable-next-line no-unused-vars
   const { onclick, setOpen } = props;
   const [state, setState] = useState({
     email: "",
@@ -61,7 +62,11 @@ const SignIn = (props) => {
             placeholder="Password"
           />
         </Form.Group>
-        <Button variant="primary" type="submit">
+        <Button
+          variant="primary"
+          type="submit"
+          style={{ background: "#FE024E", border: "#FE024E" }}
+        >
           Login
         </Button>
         <p className="mt-5 text-muted text-center signFoot">
