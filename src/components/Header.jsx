@@ -21,8 +21,10 @@ const Header = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getUser(token));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dispatch]);
 
+  // eslint-disable-next-line no-unused-vars
   const { user, loading } = useSelector((state) => state.reducerUser);
 
   const searchMovie = (e) => {
@@ -68,6 +70,7 @@ const Header = () => {
               {window.location.pathname === "/" ||
               window.location.pathname === "/signup" ? (
                 <input
+                  style={{ maxWidth: "75rem" }}
                   className="form-control me-2"
                   type="search"
                   placeholder="Search Movie"
