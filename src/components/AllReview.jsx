@@ -4,11 +4,10 @@ import { useState, useEffect } from "react";
 import { getReview } from "../store/actions/review";
 import { addReview } from "../store/actions/submitReview";
 import "../styles/PostReview.css";
-import { Button, Form, Card, Image } from "react-bootstrap";
+import { Button, Form, Card } from "react-bootstrap";
 import StarRating from "./StarRating";
 import ChangeReview from "./ChangeReview";
 import { useParams } from "react-router-dom";
-import CardHeader from "react-bootstrap/esm/CardHeader";
 
 function AllReview() {
   const dispatch = useDispatch();
@@ -28,15 +27,6 @@ function AllReview() {
     dispatch(getReview(id));
   }, []);
 
-  // const changeReviewItem = (item) => {
-  //   dispatch(
-  //     changeReview(item.id, {
-  //       id: item.id,
-  //       reviews: item.reviews,
-  //       isDone: !item.isDone,
-  //     })
-  //   );
-  // };
   const changeInput = (e) => {
     setReviews(e.target.value);
   };
@@ -54,7 +44,6 @@ function AllReview() {
         })
       );
       await dispatch(getReview(id));
-      console.log(id);
     }
   };
   const ratingInput = (rate) => {
@@ -63,41 +52,42 @@ function AllReview() {
   return (
     <div>
       <div className="card-review">
-        <Card className="post-review" style={{ width: "100%" }}>
-          <Card.Body>
-            {/* <Image src="holder.js/171x180" roundedCircle /> */}
-            <Card.Title>{currentUser?.username}</Card.Title>
-            <StarRating
-              name="main-rating"
-              value={rating}
-              setValue={ratingInput}
-            />
-            <Form className="m-3" onSubmit={onSubmitReview}>
-              <Form.Group
-                className="mb-3"
-                controlId="exampleForm.ControlTextarea1"
-              >
-                <Form.Control
-                  onChange={(e) => setHeadline(e.target.value)}
-                  value={headline}
-                  // as="text"
-                  rows={3}
-                  placeholder="Headline"
-                />
-                <Form.Control
-                  onChange={changeInput}
-                  value={reviews}
-                  as="textarea"
-                  rows={5}
-                  placeholder="Leave A Review"
-                />
-              </Form.Group>
-              <Button type="submit" className="post-button" variant="success">
-                Submit Review
-              </Button>
-            </Form>
-          </Card.Body>
-        </Card>
+        {currentUser ? (
+          <Card className="post-review" style={{ width: "100%" }}>
+            <Card.Body>
+              <Card.Title>{currentUser?.username}</Card.Title>
+              <StarRating
+                name="main-rating"
+                value={rating}
+                setValue={ratingInput}
+              />
+              <Form className="m-3" onSubmit={onSubmitReview}>
+                <Form.Group
+                  className="mb-3"
+                  controlId="exampleForm.ControlTextarea1"
+                >
+                  <Form.Control
+                    onChange={(e) => setHeadline(e.target.value)}
+                    value={headline}
+                    // as="text"
+                    rows={3}
+                    placeholder="Headline"
+                  />
+                  <Form.Control
+                    onChange={changeInput}
+                    value={reviews}
+                    as="textarea"
+                    rows={5}
+                    placeholder="Leave A Review"
+                  />
+                </Form.Group>
+                <Button type="submit" className="post-button" variant="success">
+                  Submit Review
+                </Button>
+              </Form>
+            </Card.Body>
+          </Card>
+        ) : null}
       </div>
       <div className="list-review">
         <h3>All Reviews </h3>
@@ -113,7 +103,7 @@ function AllReview() {
                       <Card.Body>
                         <Card.Title>{item.rating}</Card.Title>
                         <Card.Text>{item.content}</Card.Text>
-                        {currentUser.id === item.user.id ? (
+                        {currentUser && currentUser.id === item.user.id ? (
                           <ChangeReview
                             id={item.id}
                             headline={item.headline}
