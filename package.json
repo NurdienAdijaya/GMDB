@@ -31,11 +31,9 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "dev": "react-scripts start",
-    "heroku-postbuild": "npm run build",
-    "start": "serve -s build",
-    "build": "react-scripts build",
-    "test": "CI=true react-scripts test",
+    "start": "react-scripts start",
+    "build": "react-scripts build && echo '/* /index.html 200' | cat >build/_redirects",
+    "test": "react-scripts test",
     "eject": "react-scripts eject",
     "server": "json-server -p 4000 server/db.json"
   },

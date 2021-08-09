@@ -20,8 +20,9 @@ const SignIn = (props) => {
 
   const login = (e) => {
     e.preventDefault();
-    if (state.email === "" || state.password === "") {
-      alert("please fill all form");
+    if ((state.email === "") | (state.password === "")) {
+      alert("kolom kosong, tolong diisi terlebih dahulu");
+      return;
     } else {
       axios.post(BASE_URL_SIGNIN_GMDB, state).then((res) => {
         setOpen(false);
@@ -31,6 +32,7 @@ const SignIn = (props) => {
       });
     }
   };
+
   return (
     <Fragment className="body ">
       <Form

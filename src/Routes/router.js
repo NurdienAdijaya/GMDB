@@ -5,7 +5,7 @@ import Footer from "../components/Footer";
 import MovieDetailUpper from "../pages/moviedetailupper";
 
 const Routers = () => {
-  const token = localStorage.getItem("Token");
+  // const token = localStorage.getItem("Token");
   return (
     <>
       <Header />
