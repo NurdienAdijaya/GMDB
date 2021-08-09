@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import "react-responsive-modal/styles.css";
 import { Modal } from "react-responsive-modal";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -7,18 +7,26 @@ import LogoProjectTitle from "./assets/LogoProjectTitle";
 import SignIn from "./SignIn";
 import { Route, Switch } from "react-router-dom";
 import { SignUp } from "./SignUp";
-import { useDispatch } from "react-redux";
-import { clearItem, searchItem } from "../store/actions/searchMovie";
+import { useDispatch, useSelector } from "react-redux";
+import { getUser } from "../store/actions/user";
+import { clearItem, searchItem } from "../store/actions/movie";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
   const onOpenModal = () => setOpen(true);
   const onCloseModal = () => setOpen(false);
 
-  localStorage.setItem("Token", "This Is A Token");
-  const token = localStorage.getItem("");
+  const token = localStorage.getItem("Token");
 
   const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getUser(token));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [dispatch]);
+
+  // eslint-disable-next-line no-unused-vars
+  const { user, loading } = useSelector((state) => state.reducerUser);
+
   const searchMovie = (e) => {
     if (e.target.value) {
       dispatch(searchItem(e.target.value));
@@ -57,11 +65,12 @@ const Header = () => {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="me-auto">
-            <form className="d-flex">
+          <Nav className="me-auto ">
+            <form className=" d-flex">
               {window.location.pathname === "/" ||
               window.location.pathname === "/signup" ? (
                 <input
+                  style={{ maxWidth: "75rem" }}
                   className="form-control me-2"
                   type="search"
                   placeholder="Search Movie"
@@ -76,7 +85,10 @@ const Header = () => {
               <div className="text-center">
                 <img src="..." className="rounded" alt="..." />
               </div>
-              <NavDropdown title="Hi, User" id="collasible-nav-dropdown">
+              <NavDropdown
+                title={`Hi, ${user?.data?.fullname}`}
+                id="collasible-nav-dropdown"
+              >
                 <NavDropdown.Item href="/profile">Profile</NavDropdown.Item>
                 <NavDropdown.Divider />
                 <NavDropdown.Item onClick={logout} href="/">
@@ -101,10 +113,14 @@ const Header = () => {
               <Modal open={open} onClose={onCloseModal} center>
                 <Switch>
                   <Route exact path="/">
-                    <SignIn />
+                    <SignIn setOpen={setOpen} />
+                  </Route>
+
+                  <Route exact path="/login">
+                    <SignIn setOpen={setOpen} />
                   </Route>
                   <Route path="/signup">
-                    <SignUp />
+                    <SignUp setOpen={setOpen} />
                   </Route>
                 </Switch>
               </Modal>

@@ -3,17 +3,20 @@ import { Button, Form } from "react-bootstrap";
 import "react-responsive-modal/styles.css";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-
 import LogoProjectTitle from "./assets/LogoProjectTitle";
 import axios from "axios";
 import { BASE_URL_SIGNIN_GMDB } from "../store/actions/types";
 
 const SignIn = (props) => {
-  const { onclick, setShow } = props;
-  const { state, setState } = useState({
+  // eslint-disable-next-line no-unused-vars
+  const { onclick, setOpen } = props;
+  const [state, setState] = useState({
     email: "",
     password: "",
   });
+  const refreshPage = () => {
+    window.location.reload();
+  };
 
   const login = (e) => {
     e.preventDefault();
@@ -21,10 +24,11 @@ const SignIn = (props) => {
       alert("kolom kosong, tolong diisi terlebih dahulu");
       return;
     } else {
-      axios.post(`${BASE_URL_SIGNIN_GMDB}`, state).then((res) => {
-        setShow(false);
+      axios.post(BASE_URL_SIGNIN_GMDB, state).then((res) => {
+        setOpen(false);
         localStorage.setItem("Token", res.data.token);
         localStorage.setItem("USERID", res.data._id);
+        refreshPage();
       });
     }
   };
@@ -60,7 +64,11 @@ const SignIn = (props) => {
             placeholder="Password"
           />
         </Form.Group>
-        <Button variant="primary" type="submit">
+        <Button
+          variant="primary"
+          type="submit"
+          style={{ background: "#FE024E", border: "#FE024E" }}
+        >
           Login
         </Button>
         <p className="mt-5 text-muted text-center signFoot">

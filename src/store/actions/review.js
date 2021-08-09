@@ -6,18 +6,18 @@ import {
   BASE_URL_REVIEW,
 } from "./types";
 
-export const getReview = () => async (dispatch) => {
+export const getReview = (id) => async (dispatch) => {
   dispatch({
     type: GET_REVIEW_BEGIN,
     loading: true,
     error: null,
   });
   try {
-    const res = await axios.get(BASE_URL_REVIEW);
+    const res = await axios.get(`${BASE_URL_REVIEW}/movie/${id}`);
     dispatch({
       type: GET_REVIEW_SUCCESS,
       loading: false,
-      payload: res.data,
+      payload: res.data.data,
       error: null,
     });
   } catch (err) {

@@ -1,13 +1,13 @@
 import { combineReducers } from "redux";
 import reducerReview from "./review";
-import movie from "./movie";
-import reducerSearch from "./searchMovie";
-import reducerMovieNurd from "./moviePlaying";
+import reducerMovieBanner from "./movieBanner";
+import reducerUser from "./user";
+import reducerMovie from "./movie";
 
 const rootReducers = combineReducers({
   reducerReview,
-  movie,
-  reducerSearch,
-  reducerMovieNurd,
+  reducerMovie,
+  reducerMovieBanner,
+  reducerUser,
 });
 export default rootReducers;

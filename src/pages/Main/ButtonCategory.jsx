@@ -16,19 +16,59 @@ function ButtonCategory(button, filter) {
                         <Button type="button" onClick={filter('Drama')}>Drama</Button>
                         <Button type="button" onClick={filter('Romance')}>Romance</Button>
                         <Button type="button" onClick={filter('Thriller')}>thriller</Button> */}
-            <button type="button" className="btn btn-danger rounded-pill m-1">
+            <button
+              type="button"
+              className="btn rounded-pill m-1"
+              style={{
+                background: "#FE024E",
+                border: "#FE024E",
+                color: "white",
+              }}
+            >
               All
             </button>
-            <button type="button" className="btn btn-danger rounded-pill m-1">
+            <button
+              type="button"
+              className="btn rounded-pill m-1"
+              style={{
+                background: "#FE024E",
+                border: "#FE024E",
+                color: "white",
+              }}
+            >
               Action
             </button>
-            <button type="button" className="btn btn-danger rounded-pill m-1">
+            <button
+              type="button"
+              className="btn rounded-pill m-1"
+              style={{
+                background: "#FE024E",
+                border: "#FE024E",
+                color: "white",
+              }}
+            >
               Sci-fi
             </button>
-            <button type="button" className="btn btn-danger rounded-pill m-1">
+            <button
+              type="button"
+              className="btn rounded-pill m-1"
+              style={{
+                background: "#FE024E",
+                border: "#FE024E",
+                color: "white",
+              }}
+            >
               Drama
             </button>
-            <button type="button" className="btn btn-danger rounded-pill m-1">
+            <button
+              type="button"
+              className="btn rounded-pill m-1"
+              style={{
+                background: "#FE024E",
+                border: "#FE024E",
+                color: "white",
+              }}
+            >
               Romance
             </button>
           </div>

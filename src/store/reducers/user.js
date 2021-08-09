@@ -1,39 +1,38 @@
 import {
-  GET_MOVIES_BEGIN,
-  GET_MOVIES_FAIL,
-  GET_MOVIES_SUCCESS,
+  GET_USER_BEGIN,
+  GET_USER_FAIL,
+  GET_USER_SUCCESS,
 } from "../actions/types";
 
 const initialState = {
-  playing: [],
+  user: [],
   loading: false,
   error: null,
 };
-
-const reducerMovieNurd = (state = initialState, action) => {
+const reducerUser = (state = initialState, action) => {
   const { type, payload, error } = action;
   switch (type) {
     default:
       return {
         ...state,
       };
-    case GET_MOVIES_BEGIN:
+    case GET_USER_BEGIN:
       return {
         ...state,
         loading: true,
       };
-    case GET_MOVIES_SUCCESS:
+    case GET_USER_SUCCESS:
       return {
-        playing: payload,
+        user: payload,
         loading: false,
         error: null,
       };
-    case GET_MOVIES_FAIL:
+    case GET_USER_FAIL:
       return {
-        playing: [],
+        user: [],
         loading: false,
         error: error,
       };
   }
 };
-export default reducerMovieNurd;
+export default reducerUser;

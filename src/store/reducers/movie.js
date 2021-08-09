@@ -5,6 +5,10 @@ import {
   GET_MOVIE_DETAIL_BEGIN,
   GET_MOVIE_DETAIL_SUCCESS,
   GET_MOVIE_DETAIL_FAIL,
+  SEARCH_BEGIN,
+  SEARCH_SUCCESS,
+  SEARCH_FAIL,
+  CLEAR,
 } from "../actions/types";
 
 const initialState = {
@@ -15,6 +19,11 @@ const initialState = {
   },
   detailMovie: {
     detail: [],
+    loading: false,
+    error: null,
+  },
+  searchResult: {
+    result: [],
     loading: false,
     error: null,
   },
@@ -32,6 +41,7 @@ const reducerMovie = (state = initialState, action) => {
         ...state,
         listMovie: {
           loading: true,
+          error: null,
         },
       };
     case GET_MOVIES_SUCCESS:
@@ -52,25 +62,63 @@ const reducerMovie = (state = initialState, action) => {
       };
     case GET_MOVIE_DETAIL_BEGIN:
       return {
+        ...state,
         detailMovie: {
           loading: true,
+          error: null,
         },
       };
     case GET_MOVIE_DETAIL_SUCCESS:
       return {
+        ...state,
         detailMovie: {
-          detail: [],
+          detail: payload,
           loading: false,
           error: null,
         },
       };
     case GET_MOVIE_DETAIL_FAIL:
       return {
+        ...state,
         detailMovie: {
           detail: [],
           loading: false,
           error: error,
         },
+      };
+    case SEARCH_BEGIN:
+      return {
+        ...state,
+        searchResult: {
+          result: [],
+          loading: true,
+          error: null,
+        },
+      };
+    case SEARCH_SUCCESS:
+      return {
+        ...state,
+        searchResult: {
+          result: payload,
+          loading: false,
+          error: null,
+        },
+      };
+    case SEARCH_FAIL:
+      return {
+        ...state,
+        searchResult: {
+          result: [],
+          loading: false,
+          error: error,
+        },
+      };
+    case CLEAR:
+      return {
+        ...state,
+        result: [],
+        loading: false,
+        error: null,
       };
   }
 };

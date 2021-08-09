@@ -26,6 +26,7 @@ const reducerReview = (state = initialState, action) => {
       };
     case GET_REVIEW_SUCCESS:
       return {
+        ...state,
         review: payload,
         loading: false,
         error: null,

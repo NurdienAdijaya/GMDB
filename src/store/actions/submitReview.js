@@ -7,17 +7,23 @@ import {
 } from "./types";
 
 export const addReview = (item) => async (dispatch) => {
-  console.log(typeof item.reviews);
-  const newData = { _id: 1234567, content: item.reviews, rating: item.rating };
-  // const nData = { headline: "1234567", content: item.reviews, rating: item };
+  // const { item, token, id } = action;
+  const nData = {
+    headline: item.headline,
+    content: item.reviews,
+    rating: item.rating,
+  };
   dispatch({
     type: SUBMIT_REVIEW_BEGIN,
     loading: true,
     error: null,
   });
   try {
-    const res = await axios.post(BASE_URL_REVIEW, newData);
-    console.log(res);
+    const res = await axios.post(`${BASE_URL_REVIEW}/${item.id}`, nData, {
+      headers: {
+        Authorization: `Bearer ${item.token}`,
+      },
+    });
     dispatch({
       type: SUBMIT_REVIEW_SUCCESS,
       loading: false,
