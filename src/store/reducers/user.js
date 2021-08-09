@@ -8,6 +8,7 @@ const initialState = {
   user: [],
   loading: false,
   error: null,
+  isLogin: true,
 };
 const reducerUser = (state = initialState, action) => {
   const { type, payload, error } = action;
@@ -20,6 +21,7 @@ const reducerUser = (state = initialState, action) => {
       return {
         ...state,
         loading: true,
+        isLogin: true,
       };
     case GET_USER_SUCCESS:
       return {
