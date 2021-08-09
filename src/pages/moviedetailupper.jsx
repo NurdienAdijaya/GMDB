@@ -74,7 +74,8 @@ const MovieDetailUpper = () => {
                         className="content-youtube"
                         width="100%"
                         height="315"
-                        url={`${detail.data.trailer}`}
+                        url="https://www.youtube.com/embed/-FmWuCgJmxo"
+                        // url={`${detail.data.trailer}`}
                         title="YouTube video player"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowfullscreen
