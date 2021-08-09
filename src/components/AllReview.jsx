@@ -20,12 +20,12 @@ function AllReview() {
   const { id } = useParams();
   useEffect(() => {
     dispatch(getReview(id));
-  }, []);
+  }, [dispatch, id]);
 
   const token = localStorage.getItem("Token");
   useEffect(() => {
     dispatch(getReview(id));
-  }, []);
+  }, [dispatch, id]);
 
   const changeInput = (e) => {
     setReviews(e.target.value);

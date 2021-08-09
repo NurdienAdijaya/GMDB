@@ -56,7 +56,7 @@ const MovieDetailUpper = () => {
                     rating={detail.data.rating}
                     starRatedColor="yellow"
                     numberOfStars={5}
-                    starDimension="35px"
+                    starDimension="30px"
                     starSpacing="10px"
                   />
                   <h5>Director : {detail.data.director}</h5>
