@@ -91,4 +91,6 @@ h5 {
 
 .AktorCard {
   margin-bottom: 2em;
+  display: flex;
+  padding: 0;
 }

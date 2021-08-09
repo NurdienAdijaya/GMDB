@@ -113,7 +113,7 @@ const MovieDetailUpper = () => {
                             <div key={index}>
                               <Card
                                 className="AktorCard"
-                                style={{ width: "15rem" }}
+                                style={{ width: "12rem" }}
                               >
                                 <Card.Img
                                   className="Actorimage"
