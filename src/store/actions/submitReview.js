@@ -19,6 +19,7 @@ export const addReview = (item) => async (dispatch) => {
     error: null,
   });
   try {
+    // eslint-disable-next-line no-unused-vars
     const res = await axios.post(`${BASE_URL_REVIEW}/${item.id}`, nData, {
       headers: {
         Authorization: `Bearer ${item.token}`,

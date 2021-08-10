@@ -7,6 +7,7 @@ import { BASE_URL_SIGNUP_GMDB } from "../store/actions/types";
 import LogoProjectTitle from "./assets/LogoProjectTitle";
 
 export const SignUp = (props) => {
+  // eslint-disable-next-line no-unused-vars
   const { onClick, setOpen } = props;
   const [state, setState] = useState({
     fullname: "",
@@ -82,7 +83,11 @@ export const SignUp = (props) => {
             placeholder=""
           />
         </Form.Group>
-        <Button variant="primary" type="submit">
+        <Button
+          variant="primary"
+          type="submit"
+          style={{ background: "#FE024E", border: "#FE024E" }}
+        >
           Sign Up
         </Button>
         <p className="mt-5 text-muted text-center signFoot">

@@ -133,7 +133,7 @@ const MovieDetailUpper = () => {
                 </Tab>
                 <Tab eventKey="Review" title="Review">
                   {/* BAGIAN REVIEW */}
-                  <AllReview token={token} id={id} />
+                  <AllReview token={token} idMovie={id} />
                 </Tab>
               </Tabs>
             </div>

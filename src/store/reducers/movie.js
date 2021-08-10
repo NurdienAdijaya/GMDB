@@ -89,23 +89,29 @@ const reducerMovie = (state = initialState, action) => {
     case SEARCH_BEGIN:
       return {
         ...state,
-        result: [],
-        loading: true,
-        error: null,
+        searchResult: {
+          result: [],
+          loading: true,
+          error: null,
+        },
       };
     case SEARCH_SUCCESS:
       return {
         ...state,
-        result: payload,
-        loading: false,
-        error: null,
+        searchResult: {
+          result: payload,
+          loading: false,
+          error: null,
+        },
       };
     case SEARCH_FAIL:
       return {
         ...state,
-        result: [],
-        loading: false,
-        error: error,
+        searchResult: {
+          result: [],
+          loading: false,
+          error: error,
+        },
       };
     case CLEAR:
       return {

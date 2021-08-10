@@ -7,7 +7,7 @@ import LogoProjectTitle from "./assets/LogoProjectTitle";
 const Footer = () => {
   return (
     <div className="main-footer footer-item">
-      <div className="">
+      <div>
         <div className="logo">
           <LogoProjectTitle />
         </div>

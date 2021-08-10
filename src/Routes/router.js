@@ -3,6 +3,9 @@ import Main from "../pages/Main";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import MovieDetailUpper from "../pages/moviedetailupper";
+import NotFound from "../components/assets/404.png";
+import { Fragment } from "react";
+import UserProfile from "../pages/UserProfile";
 
 const Routers = () => {
   const token = localStorage.getItem("Token");
@@ -19,13 +22,17 @@ const Routers = () => {
         <Route exact path="/moviedetail/:id">
           <MovieDetailUpper token={token} />
         </Route>
-        <Route exact path="/">
-          <Main />
+        <Route exact path="/profile">
+          <UserProfile />
         </Route>
         <Route path="*">
-          <div>
-            <h1>Page Not Found 404</h1>
-          </div>
+          <Fragment className="container-fluid">
+            <img
+              className="container-fluid"
+              src={NotFound}
+              alt="404 page not found"
+            />
+          </Fragment>
         </Route>
       </Switch>
       <Footer />
