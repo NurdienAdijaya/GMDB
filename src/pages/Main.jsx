@@ -11,7 +11,6 @@ const Main = () => {
   const { movie, loading } = useSelector(
     (state) => state.reducerMovie.listMovie
   );
-  console.log(movie);
 
   const { result, loading: loadingSearch } = useSelector(
     (state) => state.reducerMovie.searchResult
@@ -19,6 +18,7 @@ const Main = () => {
   const [offset, setOffset] = useState(0);
   useEffect(() => {
     dispatch(getMovie(offset));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [offset]);
 
   const page1 = () => setOffset(0);

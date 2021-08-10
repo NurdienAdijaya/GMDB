@@ -21,11 +21,13 @@ function AllReview({ ...props }) {
   const { id } = useParams();
   useEffect(() => {
     dispatch(getReview(id));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const token = localStorage.getItem("Token");
   useEffect(() => {
     dispatch(getReview(id));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const changeInput = (e) => {
@@ -47,7 +49,6 @@ function AllReview({ ...props }) {
           (response) => {
             if (response.data.code === 201) {
               dispatch(getReview(idMovie));
-              console.log("id callback ", idMovie);
             }
           }
         )
