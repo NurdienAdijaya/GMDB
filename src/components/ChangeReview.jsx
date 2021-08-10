@@ -2,7 +2,7 @@ import { Button, Form } from "react-bootstrap";
 import React, { useState } from "react";
 import Modal from "react-bootstrap/Modal";
 import StarRating from "./StarRating";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { changeReview } from "../store/actions/changeReview";
 import { getReview } from "../store/actions/review";
 
@@ -20,11 +20,10 @@ function Example(props) {
   const onSubmit = async (e) => {
     e.preventDefault();
     const data = { content: reviews, headline, rating };
-    // console.log(data);
     setShow(false);
     if (reviews) {
-      await dispatch(changeReview({ id: props.id, isDone: false, ...data }));
-      await dispatch(getReview());
+      dispatch(changeReview({ id: props.id, isDone: false, ...data }));
+      dispatch(getReview());
     }
   };
 

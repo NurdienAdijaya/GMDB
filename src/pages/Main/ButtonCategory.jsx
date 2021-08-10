@@ -10,12 +10,6 @@ function ButtonCategory(button, filter) {
             <h2 className="fw-bold mb-3 text-md-start">Browse by category</h2>
           </div>
           <div className="row-cols text-md-start">
-            {/* <Button type="button" className="btn btn-danger" onClick={filter('All')}>All</Button>
-                        <Button type="button" onClick={filter('Action')}>Action</Button>
-                        <Button type="button" onClick={filter('Sci-fi')}>Sci-fi</Button>
-                        <Button type="button" onClick={filter('Drama')}>Drama</Button>
-                        <Button type="button" onClick={filter('Romance')}>Romance</Button>
-                        <Button type="button" onClick={filter('Thriller')}>thriller</Button> */}
             <button
               type="button"
               className="btn rounded-pill m-1"

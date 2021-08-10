@@ -10,6 +10,7 @@ import { SignUp } from "./SignUp";
 import { useDispatch, useSelector } from "react-redux";
 import { getUser } from "../store/actions/user";
 import { clearItem, searchItem } from "../store/actions/movie";
+import "../styles/Navbar.css";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
@@ -60,17 +61,17 @@ const Header = () => {
         variant="light"
         className="px-5 d-flex justify-content-around"
       >
-        <Navbar.Brand href="/" className="">
+        <Navbar.Brand href="/">
           <LogoProjectTitle />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto ">
-            <form className=" d-flex">
+            <form className=" d-flex search-bar">
               {window.location.pathname === "/" ||
               window.location.pathname === "/signup" ? (
                 <input
-                  style={{ maxWidth: "75rem" }}
+                  style={{ Width: "300px" }}
                   className="form-control me-2"
                   type="search"
                   placeholder="Search Movie"
@@ -83,7 +84,11 @@ const Header = () => {
           {token ? (
             <Nav>
               <div className="text-center">
-                <img src="..." className="rounded" alt="..." />
+                <img
+                  src={`https://ui-avatars.com/api/?name=${user?.data?.fullname}&background=random&length=1&rounded=true&size=35`}
+                  className="rounded"
+                  alt="..."
+                />
               </div>
               <NavDropdown
                 title={`Hi, ${user?.data?.fullname}`}

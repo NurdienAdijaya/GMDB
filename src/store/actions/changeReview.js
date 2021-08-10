@@ -7,9 +7,11 @@ import {
 } from "./types";
 
 export const changeReview =
-  ({ id, content, headline, rating }) =>
+  ({ id, content, headline, rating }, callback) =>
   async (dispatch) => {
     // console.log(id, content, headline, rating);
+
+    const token = localStorage.getItem("Token");
     dispatch({
       type: CHANGE_REVIEW_BEGIN,
       loading: true,
@@ -25,11 +27,12 @@ export const changeReview =
         },
         {
           headers: {
-            Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjEwZjY1ZTVjZGY5OTZlNDFhYTI0NTgwIiwiaWF0IjoxNjI4Mzk5MDc3LCJleHAiOjE2MzA5OTEwNzd9.Sk1kcAoiiGa3pHp27GYaCG8mfraom247aP3LtapEKJM",
+            Authorization: `Bearer ${token}`,
           },
         }
       );
+      callback(res);
+
       // console.log(res);
       dispatch({
         type: CHANGE_REVIEW_SUCCESS,

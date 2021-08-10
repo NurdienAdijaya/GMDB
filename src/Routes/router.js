@@ -5,6 +5,7 @@ import Footer from "../components/Footer";
 import MovieDetailUpper from "../pages/moviedetailupper";
 import NotFound from "../components/assets/404.png";
 import { Fragment } from "react";
+import UserProfile from "../pages/UserProfile";
 
 const Routers = () => {
   const token = localStorage.getItem("Token");
@@ -21,8 +22,8 @@ const Routers = () => {
         <Route exact path="/moviedetail/:id">
           <MovieDetailUpper token={token} />
         </Route>
-        <Route exact path="/">
-          <Main />
+        <Route exact path="/profile">
+          <UserProfile />
         </Route>
         <Route path="*">
           <Fragment className="container-fluid">
