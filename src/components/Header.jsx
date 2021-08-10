@@ -10,6 +10,7 @@ import { SignUp } from "./SignUp";
 import { useDispatch, useSelector } from "react-redux";
 import { getUser } from "../store/actions/user";
 import { clearItem, searchItem } from "../store/actions/movie";
+import "../styles/Navbar.css";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
@@ -66,7 +67,7 @@ const Header = () => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto ">
-            <form className=" d-flex">
+            <form className=" d-flex search-bar">
               {window.location.pathname === "/" ||
               window.location.pathname === "/signup" ? (
                 <input
@@ -83,7 +84,11 @@ const Header = () => {
           {token ? (
             <Nav>
               <div className="text-center">
-                <img src="..." className="rounded" alt="..." />
+                <img
+                  src={`https://ui-avatars.com/api/?name=${user?.data?.fullname}&background=random&length=1&rounded=true&size=35`}
+                  className="rounded"
+                  alt="..."
+                />
               </div>
               <NavDropdown
                 title={`Hi, ${user?.data?.fullname}`}
