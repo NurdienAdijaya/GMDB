@@ -61,7 +61,7 @@ const Header = () => {
         variant="light"
         className="px-5 d-flex justify-content-around"
       >
-        <Navbar.Brand href="/" className="">
+        <Navbar.Brand href="/">
           <LogoProjectTitle />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
