@@ -112,7 +112,7 @@ function AllReview({ ...props }) {
                       <Card.Body>
                         <Card.Title>{item?.rating}</Card.Title>
                         <Card.Text>{item?.content}</Card.Text>
-                        {currentUser && currentUser.id === item.user.id ? (
+                        {currentUser && currentUser?.id === item?.user?.id ? (
                           <ChangeReview
                             id={item.id}
                             headline={item.headline}
