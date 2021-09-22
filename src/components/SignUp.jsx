@@ -26,10 +26,13 @@ export const SignUp = (props) => {
     ) {
       alert("please fill all form");
     } else {
-      axios.post(BASE_URL_SIGNUP_GMDB, state).then((res) => {
-        setOpen(false);
-        alert("register successfully");
-      });
+      axios
+        .post(BASE_URL_SIGNUP_GMDB, state)
+        .then((res) => {
+          setOpen(false);
+          alert("register successfully");
+        })
+        .catch((error) => console.log("error signup", error.message));
     }
   };
   return (

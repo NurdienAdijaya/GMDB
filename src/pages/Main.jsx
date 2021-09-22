@@ -13,13 +13,17 @@ const Main = () => {
   );
 
   const { result, loading: loadingSearch } = useSelector(
-    (state) => state.reducerMovie.searchResult
+    (state) => state?.reducerMovie?.searchResult
   );
   const [offset, setOffset] = useState(0);
+  const [genre, setGenre] = useState("/");
+
   useEffect(() => {
-    dispatch(getMovie(offset));
+    dispatch(getMovie(genre, offset));
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [offset]);
+  }, [genre, offset]);
+  const all = () => setGenre("/");
+  const action = () => setGenre("/tag/action");
 
   const page1 = () => setOffset(0);
   const page2 = () => setOffset(10);
@@ -33,6 +37,30 @@ const Main = () => {
     <>
       <MovieCarousel />
       <ButtonCategory />
+      <button
+        type="button"
+        className="btn rounded-pill m-1"
+        style={{
+          background: "#FE024E",
+          border: "#FE024E",
+          color: "white",
+        }}
+        onClick={all}
+      >
+        All
+      </button>
+      <button
+        type="button"
+        className="btn rounded-pill m-1"
+        style={{
+          background: "#FE024E",
+          border: "#FE024E",
+          color: "white",
+        }}
+        onClick={action}
+      >
+        Action
+      </button>
       <Container className=" d-flex flex-wrap justify-content-evenly">
         {loading ? (
           <div className="d-flex justify-content-center">

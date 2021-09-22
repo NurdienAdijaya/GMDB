@@ -1,27 +1,21 @@
 import React from "react";
 import { Card, ListGroup, Container, Col, Row } from "react-bootstrap";
 
+import { useSelector } from "react-redux";
+
 function UserProfile() {
+  const { user } = useSelector((state) => state.reducerUser);
+  console.log("user", user);
   return (
-    <div>
-      <h1>Hello, User</h1>
+    <div style={{ padding: "3rem 2rem 5rem" }}>
+      <h1>{`Hello, ${user?.data?.fullname}`}</h1>
       <Container>
         <Row>
           <Col>
             <Card style={{ width: "18rem" }}>
               <ListGroup variant="flush">
-                <ListGroup.Item>Your Name</ListGroup.Item>
-                <ListGroup.Item>Your Email</ListGroup.Item>
-                <ListGroup.Item>Your Review</ListGroup.Item>
-              </ListGroup>
-            </Card>
-          </Col>
-          <Col>
-            <Card style={{ width: "18rem" }}>
-              <ListGroup variant="flush">
-                <ListGroup.Item>Your Name</ListGroup.Item>
-                <ListGroup.Item>Your Email</ListGroup.Item>
-                <ListGroup.Item>Your Review</ListGroup.Item>
+                <ListGroup.Item>{user?.data?.fullname}</ListGroup.Item>
+                <ListGroup.Item>{user?.data?.email}</ListGroup.Item>
               </ListGroup>
             </Card>
           </Col>

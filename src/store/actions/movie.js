@@ -14,14 +14,16 @@ import {
   GET_MOVIES_BANNER_FAIL,
 } from "./types";
 
-export const getMovie = (offset) => async (dispatch) => {
+export const getMovie = (genre, offset) => async (dispatch) => {
   dispatch({
     type: GET_MOVIES_BEGIN,
     loading: true,
     error: null,
   });
   try {
-    const res = await axios.get(`${BASE_URL_MOVIE_GMDB}?offset=${offset}`);
+    const res = await axios.get(
+      `${BASE_URL_MOVIE_GMDB}${genre}?offset=${offset}`
+    );
     dispatch({
       type: GET_MOVIES_SUCCESS,
       loading: false,

@@ -21,7 +21,7 @@ const SignIn = (props) => {
   const login = (e) => {
     e.preventDefault();
     if ((state.email === "") | (state.password === "")) {
-      alert("kolom kosong, tolong diisi terlebih dahulu");
+      alert("please fill all form");
       return;
     } else {
       axios.post(BASE_URL_SIGNIN_GMDB, state).then((res) => {
