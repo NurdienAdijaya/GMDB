@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import ButtonCategory from "./Main/ButtonCategory";
 import MovieCarousel from "./Main/MovieCarousel";
 import { useDispatch, useSelector } from "react-redux";
 import { getMovie } from "../store/actions/movie";
@@ -24,6 +23,9 @@ const Main = () => {
   }, [genre, offset]);
   const all = () => setGenre("/");
   const action = () => setGenre("/tag/action");
+  const scifi = () => setGenre("/tag/scifi");
+  const drama = () => setGenre("/tag/drama");
+  const romance = () => setGenre("/tag/romance");
 
   const page1 = () => setOffset(0);
   const page2 = () => setOffset(10);
@@ -36,31 +38,77 @@ const Main = () => {
   return (
     <>
       <MovieCarousel />
-      <ButtonCategory />
-      <button
-        type="button"
-        className="btn rounded-pill m-1"
-        style={{
-          background: "#FE024E",
-          border: "#FE024E",
-          color: "white",
-        }}
-        onClick={all}
-      >
-        All
-      </button>
-      <button
-        type="button"
-        className="btn rounded-pill m-1"
-        style={{
-          background: "#FE024E",
-          border: "#FE024E",
-          color: "white",
-        }}
-        onClick={action}
-      >
-        Action
-      </button>
+      <div className="Container fluid">
+        <div className="container align-items-start">
+          <div className="col">
+            <div className="col-lg-100">
+              <h2 className="fw-bold mb-3 text-md-start">Browse by category</h2>
+            </div>
+            <div className="row-cols text-md-start">
+              <button
+                type="button"
+                className="btn rounded-pill m-1"
+                style={{
+                  background: "#FE024E",
+                  border: "#FE024E",
+                  color: "white",
+                }}
+                onClick={all}
+              >
+                All
+              </button>
+              <button
+                type="button"
+                className="btn rounded-pill m-1"
+                style={{
+                  background: "#FE024E",
+                  border: "#FE024E",
+                  color: "white",
+                }}
+                onClick={action}
+              >
+                Action
+              </button>
+              <button
+                type="button"
+                className="btn rounded-pill m-1"
+                style={{
+                  background: "#FE024E",
+                  border: "#FE024E",
+                  color: "white",
+                }}
+                onClick={scifi}
+              >
+                Sci-fi
+              </button>
+              <button
+                type="button"
+                className="btn rounded-pill m-1"
+                style={{
+                  background: "#FE024E",
+                  border: "#FE024E",
+                  color: "white",
+                }}
+                onClick={drama}
+              >
+                Drama
+              </button>
+              <button
+                type="button"
+                className="btn rounded-pill m-1"
+                style={{
+                  background: "#FE024E",
+                  border: "#FE024E",
+                  color: "white",
+                }}
+                onClick={romance}
+              >
+                Romance
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
       <Container className=" d-flex flex-wrap justify-content-evenly">
         {loading ? (
           <div className="d-flex justify-content-center">

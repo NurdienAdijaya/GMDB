@@ -8,7 +8,7 @@ function UserProfile() {
   console.log("user", user);
   return (
     <div style={{ padding: "3rem 2rem 5rem" }}>
-      <h1>{`Hello, ${user?.data?.fullname}`}</h1>
+      <h1>{user.data ? `Hello, ${user?.data?.fullname}` : "Hello,"}</h1>
       <Container>
         <Row>
           <Col>

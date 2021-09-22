@@ -91,7 +91,7 @@ const Header = () => {
                 />
               </div>
               <NavDropdown
-                title={`Hi, ${user?.data?.fullname}`}
+                title={user.data ? `Hi, ${user?.data?.fullname}` : "Hi,"}
                 id="collasible-nav-dropdown"
               >
                 <NavDropdown.Item href="/profile">Profile</NavDropdown.Item>
